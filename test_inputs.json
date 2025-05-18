@@ -1,0 +1,12 @@
+[
+  {
+    "question": "What is the capital of France?",
+    "expected_answer": "Paris",
+    "group_id": "geography"
+  },
+  {
+    "question": "Who wrote '1984'?",
+    "expected_answer": "George Orwell",
+    "group_id": "literature"
+  }
+]
