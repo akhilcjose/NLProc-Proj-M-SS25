@@ -13,7 +13,10 @@ print("Files in JSON folder:", os.listdir(os.path.dirname(json_path)))
 with open(json_path, 'r') as f:
     test_data = json.load(f)
 
-for test in test_data:
-    print("Question:", test['question'])
-    print("Expected answer:", test['expected_answer'])
+for entry in test_data:
+    print(f"Time: {entry['timestamp']}")
+    print(f"Question: {entry['question']}")
+    print(f"Answer: {entry['generated_answer']}")
+    print(f"group_id:{entry['group_id']}")
+    print(f"retrieved_chunks:{entry['retrieved_chunks']}")
     print()
