@@ -1,12 +1,24 @@
 [
   {
-    "question": "What is the capital of France?",
-    "expected_answer": "Paris",
-    "group_id": "geography"
+    "timestamp": "2025-05-18T14:30:00Z",
+    "question": "What is natural language processing?",
+    "retrieved_chunks": [
+      "NLP is a subfield of AI that deals with the interaction between computers and humans using natural language.",
+      "It involves tasks like text classification, translation, and summarization."
+    ],
+    "prompt": "Answer the question using only the provided context.",
+    "generated_answer": "Natural language processing is a field of AI that enables computers to understand and generate human language.",
+    "group_id": "Team_Neon"
   },
   {
-    "question": "Who wrote '1984'?",
-    "expected_answer": "George Orwell",
-    "group_id": "literature"
+    "timestamp": "2025-05-18T14:32:10Z",
+    "question": "What is the Turing Test?",
+    "retrieved_chunks": [
+      "The Turing Test was proposed by Alan Turing as a way to evaluate machine intelligence.",
+      "A machine passes the test if it can engage in conversation indistinguishably from a human."
+    ],
+    "prompt": "Answer the question based only on the context provided.",
+    "generated_answer": "The Turing Test is a method of assessing if a machine can mimic human responses in conversation.",
+    "group_id": "Team_Neon"
   }
 ]
