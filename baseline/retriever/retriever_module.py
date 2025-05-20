@@ -1,4 +1,5 @@
 import faiss
+faiss.omp_set_num_threads(1)
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
@@ -67,65 +68,10 @@ class Retriever:
         D, I = self.index.search(query_embedding, top_k)
 
         # Return the top k document chunks and their similarity scores
-        return [(self.documents[i], D[0][idx]) for idx, i in enumerate(I[0])]
+        return [{"text": self.documents[i], "score": float(D[0][idx])} for idx, i in enumerate(I[0])]
 
     def load(self):
         """
         Load the retriever from a saved state. Placeholder method for loading.
         """
         pass  # Implement loading logic if needed
-
-    # Initialize the retriever
-from baseline.retriever.retriever_module import Retriever
-
-
-retriever = Retriever()
-
-
-# Example documents
-documents = [
-    "Lakshmi is a software engineer known for her contributions to machine learning.",
-    "She works at a top tech company and has been recognized for her achievements."
-]
-
-# Add the documents to the retriever
-retriever.add_documents(documents)
-
-# Query the retriever
-query = "Why Lakshmi is been recognized?"
-results = retriever.query(query, top_k=1)
-
-# Display results
-for chunk, score in results:
-    print(f"Score: {score:.2f} | Chunk: {chunk}")
-
-def read_text_file(filepath):
-    """Function to read content from a text file."""
-    with open(filepath, 'r', encoding='utf-8') as file:
-        content = file.read()
-    return content
-
-# Example Usage
-retriever = Retriever()
-
-def read_text_file(filepath):
-    """Function to read content from a text file."""
-    with open(filepath, 'r', encoding='utf-8') as file:
-        content = file.read()
-    return content
-
-
-# Read the text file content
-file_path = r'C:\Users\lenov\OneDrive\Desktop\Project (4th sem)\NLP_Project_neon\NLProc-Proj-M-SS25\winnie_the_pooh.txt'
-document_content = read_text_file(file_path)
-
-# Add the document to the retriever
-retriever.add_documents([document_content])
-
-# Query the retriever
-query = "can book be available in USA?"
-results = retriever.query(query, top_k=1)
-
-# Display results
-for chunk, score in results:
-    print(f"Score: {score:.2f} | Chunk: {chunk}")
