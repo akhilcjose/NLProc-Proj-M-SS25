@@ -1,7 +1,7 @@
 
 # NLProc-Proj-M-SS25 – Team Neon
 
-This project is designed to assist users in retrieving relevant research papers based on their queries. It aims to simplify and accelerate the process of academic research by providing intelligent, context-aware search results in response to natural language input.
+This project is designed to assist users in querying academic research papers and retrieving relevant, context-specific answers. The system focuses on understanding the user's query and extracting accurate information directly from the content of the given paper, enabling more efficient and insightful academic research.
 
 ---
 
@@ -25,7 +25,7 @@ NLProc-Proj-M-SS25/
 
 ## 🎯 Objective
 
-To build a retrieval-augmented NLP system where, given a query, the system fetches relevant research context and generates accurate, context-specific responses.
+To build a retrieval-augmented NLP system that takes a user query along with a research paper as input and returns precise answers from the paper’s content. This supports quick knowledge extraction and deeper understanding of scholarly texts.
 
 ![alt text](https://github.com/akhilcjose/NLProc-Proj-M-SS25/blob/feature/spec_doc/image.png)
 
@@ -35,7 +35,7 @@ To build a retrieval-augmented NLP system where, given a query, the system fetch
 ## 🚀 Features
 
 - Post natural language queries.
-- Retrieve relevant research paper results.
+- Retrieve relevant answers from research paper.
 - Improve research efficiency through semantic search.
 
 ---
