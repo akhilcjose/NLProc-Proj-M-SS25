@@ -464,14 +464,6 @@ Created as part of the SS25 NLP project module.
 
 ## 📷 Suggested Improvements
 
-You can enhance this README by adding actual figures or screenshots using the following Markdown syntax:
-
-```
-![Retriever Diagram](images/retriever_workflow.png)
-![Generator Flow](images/prompt_generation.png)
-```
-
-Place your image files inside a directory called `images/`.
 
 ---
 
