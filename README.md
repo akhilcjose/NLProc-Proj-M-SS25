@@ -105,19 +105,6 @@ Uses a tokenizer (e.g., from HuggingFace) to split text into chunks based on tok
 - ✅ Optimized for LLM input sizes  
 - ❌ Requires external tokenizer and handling edge cases
 
----
-
-## ❓ Why Chunking?
-
-> Large documents often exceed model input limits. Chunking divides them into digestible segments while preserving enough context for relevant retrieval.
-
-
-
-## 🔁 Other Methods
-
-- **`add_documents(documents)`**: Splits, embeds, and indexes documents  
-- **`query(query_text, top_k=3)`**: Returns most relevant chunks  
-- **`save()` / `load()`**: Save or load FAISS index and embeddings
 
 ---
 
