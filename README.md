@@ -49,70 +49,10 @@ pip install -r requirements.txt
 ---
 
 ## 🧠 Modules
-### 1. **Requirements** – `requirements.txt`
-
-# Creating a simple README.md content for a project based on the given requirements.txt
-
-
-# 📦 Requirements Overview
-
-This repository contains the dependencies needed for a Natural Language Processing (NLP) project that utilizes document retrieval and transformer-based embeddings.
-
-## 📚 Included Libraries
-
-### 1. **faiss-cpu**
-- A library for efficient similarity search and clustering of dense vectors.
-- Used for fast retrieval of document chunks using approximate nearest neighbor search.
-
-### 2. **sentence-transformers**
-- Framework for generating sentence and text embeddings using pretrained models like BERT, RoBERTa, etc.
-- Essential for encoding documents and queries into vectors for semantic search.
-
-### 3. **numpy**
-- Fundamental package for numerical computation.
-- Used for handling embeddings and matrix operations required by FAISS.
-
-### 4. **PyPDF2**
-- Pure Python library to read and extract text from PDF files.
-- Useful for loading real documents in `.pdf` format for processing.
 
 
 
-## 🛠️ Usage
-
-This file is useful for:
-
-- ✅ Testing and debugging the generation pipeline.
-- 📊 Comparing outputs of different models.
-- 📁 Validating context-aware responses.
-
-To load and use this file in Python:
-
-```python
-import json
-
-with open('test_inputs.json', 'r') as file:
-    test_data = json.load(file)
-
-for test_case in test_data:
-    print("Q:", test_case["question"])
-    print("A:", test_case["generated_answer"])
-    print("Chunks:", test_case["retrieved_chunks"])
-    print("-----")
-```
-
----
-
-## 📂 Related Files
-
-- `generator.py`: Builds prompts and generates answers using a transformer model.
-- `retriever_module.py`: Retrieves relevant chunks for a given query.
-- `requirements.txt`: Lists required dependencies.
-
----
-
-
-### 2. **Retriever** – `retriever_module.py`
+### 1. **Retriever** – `retriever_module.py`
 
 The `Retriever` class provides a modular interface for building a semantic retriever using **SentenceTransformers** for embeddings and **FAISS** for fast similarity search. It is designed for tasks like Question Answering (QA), search, and context retrieval in Retrieval-Augmented Generation (RAG) systems.
 
@@ -246,7 +186,7 @@ print(results)
 
 
 
-### 3 **Generator** – `generator.py`
+### 2 **Generator** – `generator.py`
 
 The `generator.py` module is responsible for generating textual responses based on tasks like Question Answering (QA), Summarization, Multiple-Choice Question (MCQ) answering, and Text Classification. It uses a pre-trained transformer model (default: `google/flan-t5-base`) from the Hugging Face Transformers library.
 
@@ -358,7 +298,7 @@ pip install transformers torch
 Make sure your directory structure includes `generator.py` and the examples above to test different task types.
 
 
-### 4. **Evaluator** – `evaluation.py`
+### 3. **Evaluator** – `evaluation.py`
 
 Loads `test_inputs.json` and prints question, retrieved context, generated answer, and metadata.
 
@@ -382,13 +322,65 @@ python baseline/evaluation.py
 ```
 
 ---
+### 4. **Requirements** – `requirements.txt`
 
-## 🧰 Tools & Libraries
+# Creating a simple README.md content for a project based on the given requirements.txt
 
-- `transformers` – For sequence generation (`flan-t5`)
-- `sentence-transformers` – For semantic embeddings
-- `faiss-cpu` – For fast similarity search
-- `torch` – Backend for model inference
+
+# 📦 Requirements Overview
+
+This repository contains the dependencies needed for a Natural Language Processing (NLP) project that utilizes document retrieval and transformer-based embeddings.
+
+## 📚 Included Libraries
+
+### 1. **faiss-cpu**
+- A library for efficient similarity search and clustering of dense vectors.
+- Used for fast retrieval of document chunks using approximate nearest neighbor search.
+
+### 2. **sentence-transformers**
+- Framework for generating sentence and text embeddings using pretrained models like BERT, RoBERTa, etc.
+- Essential for encoding documents and queries into vectors for semantic search.
+
+### 3. **numpy**
+- Fundamental package for numerical computation.
+- Used for handling embeddings and matrix operations required by FAISS.
+
+### 4. **PyPDF2**
+- Pure Python library to read and extract text from PDF files.
+- Useful for loading real documents in `.pdf` format for processing.
+
+
+
+## 🛠️ Usage
+
+This file is useful for:
+
+- ✅ Testing and debugging the generation pipeline.
+- 📊 Comparing outputs of different models.
+- 📁 Validating context-aware responses.
+
+To load and use this file in Python:
+
+```python
+import json
+
+with open('test_inputs.json', 'r') as file:
+    test_data = json.load(file)
+
+for test_case in test_data:
+    print("Q:", test_case["question"])
+    print("A:", test_case["generated_answer"])
+    print("Chunks:", test_case["retrieved_chunks"])
+    print("-----")
+```
+
+---
+
+## 📂 Related Files
+
+- `generator.py`: Builds prompts and generates answers using a transformer model.
+- `retriever_module.py`: Retrieves relevant chunks for a given query.
+- `requirements.txt`: Lists required dependencies.
 
 ---
 
