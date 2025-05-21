@@ -53,7 +53,7 @@ pip install -r requirements.txt
 
 # Creating a simple README.md content for a project based on the given requirements.txt
 
-simple_readme_content = """
+
 # 📦 Requirements Overview
 
 This repository contains the dependencies needed for a Natural Language Processing (NLP) project that utilizes document retrieval and transformer-based embeddings.
