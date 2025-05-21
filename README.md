@@ -244,17 +244,6 @@ results = retriever.query("What is NLP?")
 print(results)
 ```
 
----
-
-## 📦 Dependencies
-
-```
-faiss-cpu
-sentence-transformers
-openai
-hf_xet
-```
-
 
 
 ### 3 **Generator** – `generator.py`
