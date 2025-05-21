@@ -76,52 +76,7 @@ This repository contains the dependencies needed for a Natural Language Processi
 - Pure Python library to read and extract text from PDF files.
 - Useful for loading real documents in `.pdf` format for processing.
 
-## 💾 Installation
 
-Install all dependencies using the following command:
-
-```bash
-pip install -r requirements.txt
-
-
-### 1. **Test_inputs** – `test_inputs.json`
-
-This file holds test cases that simulate user queries and model-generated answers based on retrieved document chunks. It's intended to validate the response generation logic using specific contexts.
-
----
-
-## 📌 Fields Explained
-
-Each entry in the JSON list includes the following fields:
-
-| Field             | Description |
-|------------------|-------------|
-| `timestamp`       | UTC timestamp of when the test case was generated. |
-| `question`        | User's natural language query. |
-| `retrieved_chunks`| List of text passages retrieved from a document corpus. |
-| `prompt`          | Instruction provided to the model to shape the response. |
-| `generated_answer`| The model's answer generated from the given prompt and chunks. |
-| `group_id`        | Identifier for the team or project that created the test. |
-
----
-
-## 🧪 Sample Test Case
-
-```json
-{
-  "timestamp": "2025-05-18T14:30:00Z",
-  "question": "What is natural language processing?",
-  "retrieved_chunks": [
-    "NLP is a subfield of AI that deals with the interaction between computers and humans using natural language.",
-    "It involves tasks like text classification, translation, and summarization."
-  ],
-  "prompt": "Answer the question using only the provided context.",
-  "generated_answer": "Natural language processing is a field of AI that enables computers to understand and generate human language.",
-  "group_id": "Team_Neon"
-}
-```
-
----
 
 ## 🛠️ Usage
 
