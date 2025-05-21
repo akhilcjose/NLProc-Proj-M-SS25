@@ -61,9 +61,6 @@ The `Retriever` class provides a modular interface for building a semantic retri
 
 ## 🧠 Core Components
 
-### `chunk_document(document, method='fixed', ...)`
-
-
 - **_init__** - Initializes the retriever with a SentenceTransformer model and sets up data structures for storing documents and embeddings.
 - **chunk_document** -  Splits a document into overlapping word chunks to preserve context for embedding and retrieval.
 - **add_documents** - Processes and embeds input documents, then builds a FAISS index for efficient similarity search.
@@ -150,7 +147,7 @@ The `generator.py` module is responsible for generating textual responses based 
 
 ## 🧠 How It Works
 
-### Main Components:
+### Core Components:
 - **Tokenizer & Model Initialization**: Loads the pre-trained model and tokenizer.
 - **Prompt Builder**: Constructs task-specific prompts using the context (retrieved document chunks, question, etc.)
 - **Answer Generator**: Uses beam search to generate a concise response.
