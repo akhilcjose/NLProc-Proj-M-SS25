@@ -128,7 +128,7 @@ Uses a tokenizer (e.g., from HuggingFace) to split text into chunks based on tok
 
 
 
-# 2 **Generator** – `generator.py`
+# 2. **Generator** – `generator.py`
 
 The `generator.py` module is responsible for generating textual responses based on tasks like Question Answering (QA), Summarization, Multiple-Choice Question (MCQ) answering, and Text Classification. It uses a pre-trained transformer model (default: `google/flan-t5-base`) from the Hugging Face Transformers library.
 
