@@ -27,7 +27,7 @@ NLProc-Proj-M-SS25/
 
 To build a retrieval-augmented NLP system where given a query, the system fetches relevant context and generates accurate, context-specific responses.
 
-![alt text](/Users/delnajose/Documents/Semester 4/NLP Project/Week 3/NL_Project_Neon/NLProc-Proj-M-SS25/image.png)
+![alt text](https://github.com/akhilcjose/NLProc-Proj-M-SS25/blob/feature/spec_doc/image.png)
 
 ---
 
