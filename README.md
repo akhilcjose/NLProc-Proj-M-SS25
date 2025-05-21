@@ -63,7 +63,12 @@ The `Retriever` class provides a modular interface for building a semantic retri
 
 ### `chunk_document(document, method='fixed', ...)`
 
-Splits a document into smaller chunks using one of several strategies.
+
+- **_init__** - Initializes the retriever with a SentenceTransformer model and sets up data structures for storing documents and embeddings.
+- **chunk_document** -  Splits a document into overlapping word chunks to preserve context for embedding and retrieval.
+- **add_documents** - Processes and embeds input documents, then builds a FAISS index for efficient similarity search.
+- **query** - Finds and returns the most relevant document chunks based on the semantic similarity of the input query.
+- **load** - Placeholder method intended for implementing future model and index loading capabilities.
 
 ---
 
