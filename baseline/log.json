@@ -1,0 +1,737 @@
+[
+  {
+    "group_id": "Team_Neon",
+    "question": "Who is Winnie-the-Pooh?",
+    "expected_answer": "Winnie-the-Pooh is a bear who lives in the forest under the name of Sanders and enjoys eating honey.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nstopping to think, that he was Winnie-the-Pooh. And he was. So, as I have explained the Pooh part, I will\nis at the bottom, and ready to be introduced to you. Winnie-the-Pooh. When I first heard his name, I said,\nthing is that we can't remember whether Winnie is called after Pooh, or Pooh after Winnie. We did know once,\nyou. Winnie-the-Pooh. When I first heard his name, I said, just as you are going to say, \"But I thought\nas which?\"--and sometimes he didn't quite know what he _was_ thinking about. So when Winnie-the-Pooh came stumping along, Eeyore was\n\"Thank you, Pooh,\" answered Eeyore. \"You're a real friend,\" said he. \"Not like Some,\" he said. So Winnie-the-Pooh went off\na very long time ago now, about last Friday, Winnie-the-Pooh lived in a forest all by himself under the name\nIN WHICH POOH GOES VISITING AND GETS INTO A TIGHT PLACE Edward Bear, known to his friends as Winnie-the-Pooh, or\nA POOH PARTY, AND WE SAY GOOD-BYE WINNIE-THE-POOH CHAPTER I IN WHICH WE ARE INTRODUCED TO WINNIE-THE-POOH AND SOME BEES,\nname all to himself, Christopher Robin said at once, without stopping to think, that he was Winnie-the-Pooh. And he was.\n\nQuestion: Who is Winnie-the-Pooh?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "stopping to think, that he was Winnie-the-Pooh. And he was. So, as I have explained the Pooh part, I will",
+        "score": 23.89333724975586
+      },
+      {
+        "text": "is at the bottom, and ready to be introduced to you. Winnie-the-Pooh. When I first heard his name, I said,",
+        "score": 24.325546264648438
+      },
+      {
+        "text": "thing is that we can't remember whether Winnie is called after Pooh, or Pooh after Winnie. We did know once,",
+        "score": 25.198036193847656
+      },
+      {
+        "text": "you. Winnie-the-Pooh. When I first heard his name, I said, just as you are going to say, \"But I thought",
+        "score": 26.57410430908203
+      },
+      {
+        "text": "as which?\"--and sometimes he didn't quite know what he _was_ thinking about. So when Winnie-the-Pooh came stumping along, Eeyore was",
+        "score": 29.06402587890625
+      },
+      {
+        "text": "\"Thank you, Pooh,\" answered Eeyore. \"You're a real friend,\" said he. \"Not like Some,\" he said. So Winnie-the-Pooh went off",
+        "score": 29.118934631347656
+      },
+      {
+        "text": "a very long time ago now, about last Friday, Winnie-the-Pooh lived in a forest all by himself under the name",
+        "score": 29.22522735595703
+      },
+      {
+        "text": "IN WHICH POOH GOES VISITING AND GETS INTO A TIGHT PLACE Edward Bear, known to his friends as Winnie-the-Pooh, or",
+        "score": 29.299346923828125
+      },
+      {
+        "text": "A POOH PARTY, AND WE SAY GOOD-BYE WINNIE-THE-POOH CHAPTER I IN WHICH WE ARE INTRODUCED TO WINNIE-THE-POOH AND SOME BEES,",
+        "score": 29.55135154724121
+      },
+      {
+        "text": "name all to himself, Christopher Robin said at once, without stopping to think, that he was Winnie-the-Pooh. And he was.",
+        "score": 29.627880096435547
+      }
+    ],
+    "generated_answer": "Edward Bear"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "Why did Pooh climb the tree?",
+    "expected_answer": "Pooh climbed the tree because he heard buzzing and thought there were bees making honey, which he wanted to eat.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nback to his tree again. \"Bother!\" said Pooh, as he opened it. \"All that wet for nothing. What's that bit\nPooh plunged into the water, seized the bottle, and struggled back to his tree again. \"Bother!\" said Pooh, as he\nfine day Pooh had stumped up to the top of the Forest to see if his friend Christopher Robin was\nwas Pooh bumping his head against a tree-root he had found. \"There!\" said Piglet. \"Isn't it _awful_?\" And he held\nstood on that branch ... _Crack!_ \"Oh, help!\" said Pooh, as he dropped ten feet on the branch below him.\nwhen the whole Escape was finished, there was Pooh sitting on his branch, dangling his legs, and there, beside him,\nwas Winnie-the-Pooh. Pooh was walking round and round in a circle, thinking of something else, and when Piglet called to\nAnd then, just as they came to the Six Pine Trees, Pooh looked round to see that nobody else was\nwent the Heffalump's head against the tree-root, Smash went the jar, and out came Pooh's head again.... Then Piglet saw\nand---- \"Why?\" said Piglet. \"Why what?\" said Pooh. \"Why would he fall in?\" Pooh rubbed his nose with his paw,\n\nQuestion: Why did Pooh climb the tree?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "back to his tree again. \"Bother!\" said Pooh, as he opened it. \"All that wet for nothing. What's that bit",
+        "score": 31.01010513305664
+      },
+      {
+        "text": "Pooh plunged into the water, seized the bottle, and struggled back to his tree again. \"Bother!\" said Pooh, as he",
+        "score": 31.017332077026367
+      },
+      {
+        "text": "fine day Pooh had stumped up to the top of the Forest to see if his friend Christopher Robin was",
+        "score": 32.217227935791016
+      },
+      {
+        "text": "was Pooh bumping his head against a tree-root he had found. \"There!\" said Piglet. \"Isn't it _awful_?\" And he held",
+        "score": 32.8911247253418
+      },
+      {
+        "text": "stood on that branch ... _Crack!_ \"Oh, help!\" said Pooh, as he dropped ten feet on the branch below him.",
+        "score": 33.20561599731445
+      },
+      {
+        "text": "when the whole Escape was finished, there was Pooh sitting on his branch, dangling his legs, and there, beside him,",
+        "score": 33.93571853637695
+      },
+      {
+        "text": "was Winnie-the-Pooh. Pooh was walking round and round in a circle, thinking of something else, and when Piglet called to",
+        "score": 34.00940704345703
+      },
+      {
+        "text": "And then, just as they came to the Six Pine Trees, Pooh looked round to see that nobody else was",
+        "score": 34.147315979003906
+      },
+      {
+        "text": "went the Heffalump's head against the tree-root, Smash went the jar, and out came Pooh's head again.... Then Piglet saw",
+        "score": 34.54060363769531
+      },
+      {
+        "text": "and---- \"Why?\" said Piglet. \"Why what?\" said Pooh. \"Why would he fall in?\" Pooh rubbed his nose with his paw,",
+        "score": 35.34425354003906
+      }
+    ],
+    "generated_answer": "To see if his friend Christopher Robin was"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "What happened when Pooh tried to get honey with a balloon?",
+    "expected_answer": "Pooh tried to float to the honey using a blue balloon, pretending to be a little black rain cloud, but the bees got suspicious and he had to be brought down by Christopher Robin shooting the balloon.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nballoon.\" So off Piglet trotted; and in the other direction went Pooh, with his jar of honey. It was a\nyou don't get honey with balloons!\" \"_I_ do,\" said Pooh. Well, it just happened that you had been to a\nand there beside him, was one pot of honey. Four days later, there was Pooh ... And it was on\nhis mouth, and said in a deep whisper: \"_Honey!_\" \"But you don't get honey with balloons!\" \"_I_ do,\" said Pooh.\nthen Pooh would have to give up some of his own honey, so he said, \"All right, honey then,\" just\nthan it was, and Pooh's jar of honey at the bottom was something mysterious, a shape and no more. But\nhis paws and thought very carefully. \"It's like this,\" he said. \"When you go after honey with a balloon, the\n\"Got it?\" and Pooh said, \"Yes, but it isn't quite a full jar,\" and he threw it down to Piglet,\nAnd all the time Winnie-the-Pooh had been trying to get the honey-jar off his head. The more he shook it,\nthe pit, while _you_ go and get the honey.\" \"Very well,\" said Pooh, and he stumped off. As soon as\n\nQuestion: What happened when Pooh tried to get honey with a balloon?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "balloon.\" So off Piglet trotted; and in the other direction went Pooh, with his jar of honey. It was a",
+        "score": 19.966142654418945
+      },
+      {
+        "text": "you don't get honey with balloons!\" \"_I_ do,\" said Pooh. Well, it just happened that you had been to a",
+        "score": 21.23469352722168
+      },
+      {
+        "text": "and there beside him, was one pot of honey. Four days later, there was Pooh ... And it was on",
+        "score": 25.879451751708984
+      },
+      {
+        "text": "his mouth, and said in a deep whisper: \"_Honey!_\" \"But you don't get honey with balloons!\" \"_I_ do,\" said Pooh.",
+        "score": 28.70135498046875
+      },
+      {
+        "text": "then Pooh would have to give up some of his own honey, so he said, \"All right, honey then,\" just",
+        "score": 28.81135368347168
+      },
+      {
+        "text": "than it was, and Pooh's jar of honey at the bottom was something mysterious, a shape and no more. But",
+        "score": 29.182872772216797
+      },
+      {
+        "text": "his paws and thought very carefully. \"It's like this,\" he said. \"When you go after honey with a balloon, the",
+        "score": 30.359806060791016
+      },
+      {
+        "text": "\"Got it?\" and Pooh said, \"Yes, but it isn't quite a full jar,\" and he threw it down to Piglet,",
+        "score": 30.785327911376953
+      },
+      {
+        "text": "And all the time Winnie-the-Pooh had been trying to get the honey-jar off his head. The more he shook it,",
+        "score": 31.312213897705078
+      },
+      {
+        "text": "the pit, while _you_ go and get the honey.\" \"Very well,\" said Pooh, and he stumped off. As soon as",
+        "score": 31.92776870727539
+      }
+    ],
+    "generated_answer": "Piglet trotted"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "Why did Pooh get stuck in Rabbit's doorway?",
+    "expected_answer": "Pooh got stuck in Rabbit's doorway because he had eaten too much honey and condensed milk during a visit.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nPooh, we might push you back.\" Rabbit scratched his whiskers thoughtfully, and pointed out that, when once Pooh was pushed\nis,\" said Rabbit, \"you're stuck.\" \"It all comes,\" said Pooh crossly, \"of not having front doors big enough.\" \"It all\nto go on.\" \"I can't do either!\" said Pooh. \"Oh, help _and_ bother!\" Now by this time Rabbit wanted to\nRoo, dear?\" Piglet made a squeaky Roo-noise from the bottom of Kanga's pocket. \"Rabbit had to go away,\" said Pooh.\ngot left?\" and Pooh said \"Yes.\" Because it was. So Piglet put the jar at the bottom of the Pit,\nand---- \"Why?\" said Piglet. \"Why what?\" said Pooh. \"Why would he fall in?\" Pooh rubbed his nose with his paw,\nfrom the bottom of his Very Deep Pit, and said, \"Got it?\" and Pooh said, \"Yes, but it isn't quite\ncrept to the side of the Trap and looked in.... And all the time Winnie-the-Pooh had been trying to get\nand then we really _must_ be going.\" Rabbit gave Pooh a hurrying-up sort of nudge. \"Talking of Poetry,\" said Pooh\nwas Pooh bumping his head against a tree-root he had found. \"There!\" said Piglet. \"Isn't it _awful_?\" And he held\n\nQuestion: Why did Pooh get stuck in Rabbit's doorway?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "Pooh, we might push you back.\" Rabbit scratched his whiskers thoughtfully, and pointed out that, when once Pooh was pushed",
+        "score": 25.844879150390625
+      },
+      {
+        "text": "is,\" said Rabbit, \"you're stuck.\" \"It all comes,\" said Pooh crossly, \"of not having front doors big enough.\" \"It all",
+        "score": 29.129253387451172
+      },
+      {
+        "text": "to go on.\" \"I can't do either!\" said Pooh. \"Oh, help _and_ bother!\" Now by this time Rabbit wanted to",
+        "score": 29.747528076171875
+      },
+      {
+        "text": "Roo, dear?\" Piglet made a squeaky Roo-noise from the bottom of Kanga's pocket. \"Rabbit had to go away,\" said Pooh.",
+        "score": 30.045269012451172
+      },
+      {
+        "text": "got left?\" and Pooh said \"Yes.\" Because it was. So Piglet put the jar at the bottom of the Pit,",
+        "score": 30.371076583862305
+      },
+      {
+        "text": "and---- \"Why?\" said Piglet. \"Why what?\" said Pooh. \"Why would he fall in?\" Pooh rubbed his nose with his paw,",
+        "score": 30.673398971557617
+      },
+      {
+        "text": "from the bottom of his Very Deep Pit, and said, \"Got it?\" and Pooh said, \"Yes, but it isn't quite",
+        "score": 30.778301239013672
+      },
+      {
+        "text": "crept to the side of the Trap and looked in.... And all the time Winnie-the-Pooh had been trying to get",
+        "score": 30.893095016479492
+      },
+      {
+        "text": "and then we really _must_ be going.\" Rabbit gave Pooh a hurrying-up sort of nudge. \"Talking of Poetry,\" said Pooh",
+        "score": 31.277355194091797
+      },
+      {
+        "text": "was Pooh bumping his head against a tree-root he had found. \"There!\" said Piglet. \"Isn't it _awful_?\" And he held",
+        "score": 31.520503997802734
+      }
+    ],
+    "generated_answer": "not having front doors big enough"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "How did they get Pooh out of Rabbit's door?",
+    "expected_answer": "They had to wait a week for Pooh to get thin again, and then pulled him out while Rabbit's friends and Christopher Robin helped.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nBY POOH POOH FOUND IT. Then they all went home again. And I think, but I am not quite sure,\ndoor for me. Did you see them, Pooh?\" For some time now Pooh had been saying \"Yes\" and \"No\" in\ngot left?\" and Pooh said \"Yes.\" Because it was. So Piglet put the jar at the bottom of the Pit,\nRoo, dear?\" Piglet made a squeaky Roo-noise from the bottom of Kanga's pocket. \"Rabbit had to go away,\" said Pooh.\nany more?\" asked Pooh quickly. Rabbit took the covers off the dishes, and said, \"No, there wasn't.\" \"I thought not,\"\nto go on.\" \"I can't do either!\" said Pooh. \"Oh, help _and_ bother!\" Now by this time Rabbit wanted to\nam,\" said a growly voice behind him. \"Pooh!\" They rushed into each other's arms. \"How did you get here, Pooh?\"\nPooh, we might push you back.\" Rabbit scratched his whiskers thoughtfully, and pointed out that, when once Pooh was pushed\nof Rabbit, and they all pulled together.... And for a long time Pooh only said \"_Ow!_\" ... And \"_Oh!_\" ...\nwhen Pooh and Piglet tried to catch the Heffalump----\" \"They didn't catch it, did they?\" \"No.\" \"Pooh couldn't, because he\n\nQuestion: How did they get Pooh out of Rabbit's door?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "BY POOH POOH FOUND IT. Then they all went home again. And I think, but I am not quite sure,",
+        "score": 30.1485595703125
+      },
+      {
+        "text": "door for me. Did you see them, Pooh?\" For some time now Pooh had been saying \"Yes\" and \"No\" in",
+        "score": 30.983428955078125
+      },
+      {
+        "text": "got left?\" and Pooh said \"Yes.\" Because it was. So Piglet put the jar at the bottom of the Pit,",
+        "score": 31.1398868560791
+      },
+      {
+        "text": "Roo, dear?\" Piglet made a squeaky Roo-noise from the bottom of Kanga's pocket. \"Rabbit had to go away,\" said Pooh.",
+        "score": 31.2183837890625
+      },
+      {
+        "text": "any more?\" asked Pooh quickly. Rabbit took the covers off the dishes, and said, \"No, there wasn't.\" \"I thought not,\"",
+        "score": 31.22454261779785
+      },
+      {
+        "text": "to go on.\" \"I can't do either!\" said Pooh. \"Oh, help _and_ bother!\" Now by this time Rabbit wanted to",
+        "score": 31.311534881591797
+      },
+      {
+        "text": "am,\" said a growly voice behind him. \"Pooh!\" They rushed into each other's arms. \"How did you get here, Pooh?\"",
+        "score": 31.430126190185547
+      },
+      {
+        "text": "Pooh, we might push you back.\" Rabbit scratched his whiskers thoughtfully, and pointed out that, when once Pooh was pushed",
+        "score": 31.535846710205078
+      },
+      {
+        "text": "of Rabbit, and they all pulled together.... And for a long time Pooh only said \"_Ow!_\" ... And \"_Oh!_\" ...",
+        "score": 31.670032501220703
+      },
+      {
+        "text": "when Pooh and Piglet tried to catch the Heffalump----\" \"They didn't catch it, did they?\" \"No.\" \"Pooh couldn't, because he",
+        "score": 32.527862548828125
+      }
+    ],
+    "generated_answer": "Pooh was pushed of Rabbit"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "What is a Woozle?",
+    "expected_answer": "A Woozle is a mysterious creature that Pooh and Piglet thought they were tracking, but they were actually following their own footprints.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\ntracks! Three, as it were, Woozles, and one, as it was, Wizzle. _Another Woozle has joined them!_\" And so it\n\"because it makes different marks. It is either Two Woozles and one, as it might be, Wizzle, or Two, as\n\"Do you think it is another Woozle?\" \"No,\" said Pooh, \"because it makes different marks. It is either Two Woozles\ncase it really _was_ a Woozle. \"You mean, in case it really is two Woozles,\" said Winnie-the-Pooh, and Piglet said\nyou think it's a--a--a Woozle?\" \"It may be,\" said Pooh. \"Sometimes it is, and sometimes it isn't. You never can\ndo until Friday, and would be delighted to come, in case it really _was_ a Woozle. \"You mean, in case\nwas, Wizzle. _Another Woozle has joined them!_\" And so it seemed to be. There were the tracks; crossing over each\nit might be, Wizzles and one, if so it is, Woozle. Let us continue to follow them.\" So they went\nHe gave a little squeak of excitement. \"Oh, Pooh! Do you think it's a--a--a Woozle?\" \"It may be,\" said Pooh.\nand one, as it might be, Wizzle, or Two, as it might be, Wizzles and one, if so it is,\n\nQuestion: What is a Woozle?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "tracks! Three, as it were, Woozles, and one, as it was, Wizzle. _Another Woozle has joined them!_\" And so it",
+        "score": 34.199317932128906
+      },
+      {
+        "text": "\"because it makes different marks. It is either Two Woozles and one, as it might be, Wizzle, or Two, as",
+        "score": 34.5556526184082
+      },
+      {
+        "text": "\"Do you think it is another Woozle?\" \"No,\" said Pooh, \"because it makes different marks. It is either Two Woozles",
+        "score": 35.51902770996094
+      },
+      {
+        "text": "case it really _was_ a Woozle. \"You mean, in case it really is two Woozles,\" said Winnie-the-Pooh, and Piglet said",
+        "score": 37.918907165527344
+      },
+      {
+        "text": "you think it's a--a--a Woozle?\" \"It may be,\" said Pooh. \"Sometimes it is, and sometimes it isn't. You never can",
+        "score": 40.857879638671875
+      },
+      {
+        "text": "do until Friday, and would be delighted to come, in case it really _was_ a Woozle. \"You mean, in case",
+        "score": 42.89022445678711
+      },
+      {
+        "text": "was, Wizzle. _Another Woozle has joined them!_\" And so it seemed to be. There were the tracks; crossing over each",
+        "score": 44.384117126464844
+      },
+      {
+        "text": "it might be, Wizzles and one, if so it is, Woozle. Let us continue to follow them.\" So they went",
+        "score": 45.24608612060547
+      },
+      {
+        "text": "He gave a little squeak of excitement. \"Oh, Pooh! Do you think it's a--a--a Woozle?\" \"It may be,\" said Pooh.",
+        "score": 46.235687255859375
+      },
+      {
+        "text": "and one, as it might be, Wizzle, or Two, as it might be, Wizzles and one, if so it is,",
+        "score": 47.95834732055664
+      }
+    ],
+    "generated_answer": "I don't know."
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "What did Pooh do when Eeyore lost his tail?",
+    "expected_answer": "Pooh visited Owl for advice and eventually discovered that Owl had taken Eeyore\u2019s tail and used it as a bell rope.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nfor it. CHAPTER IV IN WHICH EEYORE LOSES A TAIL AND POOH FINDS ONE The Old Grey Donkey, Eeyore, stood\nhe said. \"How's things?\" \"Terrible and Sad,\" said Pooh, \"because Eeyore, who is a friend of mine, has lost his\nEeyore, who is a friend of mine, has lost his tail. And he's Moping about it. So could you very\nplace again, Eeyore frisked about the forest, waving his tail so happily that Winnie-the-Pooh came over all funny, and had\nEeyore. \"Joke,\" he explained. \"Ha ha!\" Pooh scratched his head, being a little puzzled by all this. \"But is it\nyou see them?\" \"No,\" said Pooh. \"Neither can I,\" said Eeyore. \"Joke,\" he explained. \"Ha ha!\" Pooh scratched his head,\nhe. \"Not like Some,\" he said. So Winnie-the-Pooh went off to find Eeyore's tail. It was a fine spring morning\nfound the North Pole!\" \"Oh!\" said Pooh. Eeyore was sitting with his tail in the water when they all got\nas which?\"--and sometimes he didn't quite know what he _was_ thinking about. So when Winnie-the-Pooh came stumping along, Eeyore was\nlarge something to anybody who finds Eeyore's tail.\" \"I see, I see,\" said Pooh, nodding his head. \"Talking about large\n\nQuestion: What did Pooh do when Eeyore lost his tail?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "for it. CHAPTER IV IN WHICH EEYORE LOSES A TAIL AND POOH FINDS ONE The Old Grey Donkey, Eeyore, stood",
+        "score": 20.80327033996582
+      },
+      {
+        "text": "he said. \"How's things?\" \"Terrible and Sad,\" said Pooh, \"because Eeyore, who is a friend of mine, has lost his",
+        "score": 25.17159080505371
+      },
+      {
+        "text": "Eeyore, who is a friend of mine, has lost his tail. And he's Moping about it. So could you very",
+        "score": 25.390058517456055
+      },
+      {
+        "text": "place again, Eeyore frisked about the forest, waving his tail so happily that Winnie-the-Pooh came over all funny, and had",
+        "score": 27.05934715270996
+      },
+      {
+        "text": "Eeyore. \"Joke,\" he explained. \"Ha ha!\" Pooh scratched his head, being a little puzzled by all this. \"But is it",
+        "score": 27.594928741455078
+      },
+      {
+        "text": "you see them?\" \"No,\" said Pooh. \"Neither can I,\" said Eeyore. \"Joke,\" he explained. \"Ha ha!\" Pooh scratched his head,",
+        "score": 27.9189510345459
+      },
+      {
+        "text": "he. \"Not like Some,\" he said. So Winnie-the-Pooh went off to find Eeyore's tail. It was a fine spring morning",
+        "score": 27.977449417114258
+      },
+      {
+        "text": "found the North Pole!\" \"Oh!\" said Pooh. Eeyore was sitting with his tail in the water when they all got",
+        "score": 28.671390533447266
+      },
+      {
+        "text": "as which?\"--and sometimes he didn't quite know what he _was_ thinking about. So when Winnie-the-Pooh came stumping along, Eeyore was",
+        "score": 28.690826416015625
+      },
+      {
+        "text": "large something to anybody who finds Eeyore's tail.\" \"I see, I see,\" said Pooh, nodding his head. \"Talking about large",
+        "score": 29.041942596435547
+      }
+    ],
+    "generated_answer": "I don't know."
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "What did Piglet and Pooh use to try to catch a Heffalump?",
+    "expected_answer": "They dug a Very Deep Pit and put a jar of honey at the bottom to lure the Heffalump.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nwhen Pooh and Piglet tried to catch the Heffalump----\" \"They didn't catch it, did they?\" \"No.\" \"Pooh couldn't, because he\nthe Cunning Trap to catch the Heffalump. \"Bother!\" said Pooh. \"It all comes of trying to be kind to Heffalumps.\"\ndecided to catch a Heffalump.\" Pooh nodded his head several times as he said this, and waited for Piglet to\nIII IN WHICH POOH AND PIGLET GO HUNTING AND NEARLY CATCH A WOOZLE The Piglet lived in a very grand\nthe Heffalump would come along and fall into the Pit, and---- \"Why?\" said Piglet. \"Why what?\" said Pooh. \"Why would\nI thought. I suppose that's why Heffalumps hardly _ever_ get caught.\" \"That must be it,\" said Piglet. They sighed and\nPIGLET GO HUNTING AND NEARLY CATCH A WOOZLE IV. IN WHICH EEYORE LOSES A TAIL AND POOH FINDS ONE V.\nthen when I try to remember, I forget.\" \"That day when Pooh and Piglet tried to catch the Heffalump----\" \"They\nGETS INTO A TIGHT PLACE III. IN WHICH POOH AND PIGLET GO HUNTING AND NEARLY CATCH A WOOZLE IV. IN\ntrappy thing than Haycorns. Piglet didn't think so; and they were just going to argue about it, when Piglet remembered\n\nQuestion: What did Piglet and Pooh use to try to catch a Heffalump?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "when Pooh and Piglet tried to catch the Heffalump----\" \"They didn't catch it, did they?\" \"No.\" \"Pooh couldn't, because he",
+        "score": 15.444555282592773
+      },
+      {
+        "text": "the Cunning Trap to catch the Heffalump. \"Bother!\" said Pooh. \"It all comes of trying to be kind to Heffalumps.\"",
+        "score": 19.648571014404297
+      },
+      {
+        "text": "decided to catch a Heffalump.\" Pooh nodded his head several times as he said this, and waited for Piglet to",
+        "score": 19.73660659790039
+      },
+      {
+        "text": "III IN WHICH POOH AND PIGLET GO HUNTING AND NEARLY CATCH A WOOZLE The Piglet lived in a very grand",
+        "score": 20.89379119873047
+      },
+      {
+        "text": "the Heffalump would come along and fall into the Pit, and---- \"Why?\" said Piglet. \"Why what?\" said Pooh. \"Why would",
+        "score": 21.063533782958984
+      },
+      {
+        "text": "I thought. I suppose that's why Heffalumps hardly _ever_ get caught.\" \"That must be it,\" said Piglet. They sighed and",
+        "score": 21.481853485107422
+      },
+      {
+        "text": "PIGLET GO HUNTING AND NEARLY CATCH A WOOZLE IV. IN WHICH EEYORE LOSES A TAIL AND POOH FINDS ONE V.",
+        "score": 21.859859466552734
+      },
+      {
+        "text": "then when I try to remember, I forget.\" \"That day when Pooh and Piglet tried to catch the Heffalump----\" \"They",
+        "score": 22.174766540527344
+      },
+      {
+        "text": "GETS INTO A TIGHT PLACE III. IN WHICH POOH AND PIGLET GO HUNTING AND NEARLY CATCH A WOOZLE IV. IN",
+        "score": 23.334819793701172
+      },
+      {
+        "text": "trappy thing than Haycorns. Piglet didn't think so; and they were just going to argue about it, when Piglet remembered",
+        "score": 23.58012580871582
+      }
+    ],
+    "generated_answer": "Cunning Trap"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "What did Piglet think the Heffalump was?",
+    "expected_answer": "Piglet thought the Heffalump was a horrible creature in the trap, but it was actually Pooh with his head stuck in the honey jar.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nwas at that moment that Piglet looked down. \"Help, help!\" cried Piglet, \"a Heffalump, a Horrible Heffalump!\" and he scampered\nwas really jiggeting about in his brain was \"Heffalumps.\" What was a Heffalump like? Was it Fierce? _Did_ it come\nI thought. I suppose that's why Heffalumps hardly _ever_ get caught.\" \"That must be it,\" said Piglet. They sighed and\n\"I saw a Heffalump to-day, Piglet.\" \"What was it doing?\" asked Piglet. \"Just lumping along,\" said Christopher Robin. \"I don't\nwhen he heard this, and he felt that the Heffalump was as good as caught already, but there was just\nthe Heffalump would come along and fall into the Pit, and---- \"Why?\" said Piglet. \"Why what?\" said Pooh. \"Why would\nRobin finished the mouthful he was eating and said carelessly: \"I saw a Heffalump to-day, Piglet.\" \"What was it doing?\"\nthat sort, but Piglet said nothing. The fact was Piglet was wishing that _he_ had thought about it first. \"I\ntrappy thing than Haycorns. Piglet didn't think so; and they were just going to argue about it, when Piglet remembered\n\"I think he thought of something he had to go and see about suddenly.\" \"And Piglet?\" \"I think Piglet thought\n\nQuestion: What did Piglet think the Heffalump was?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "was at that moment that Piglet looked down. \"Help, help!\" cried Piglet, \"a Heffalump, a Horrible Heffalump!\" and he scampered",
+        "score": 17.884864807128906
+      },
+      {
+        "text": "was really jiggeting about in his brain was \"Heffalumps.\" What was a Heffalump like? Was it Fierce? _Did_ it come",
+        "score": 19.3543758392334
+      },
+      {
+        "text": "I thought. I suppose that's why Heffalumps hardly _ever_ get caught.\" \"That must be it,\" said Piglet. They sighed and",
+        "score": 20.083045959472656
+      },
+      {
+        "text": "\"I saw a Heffalump to-day, Piglet.\" \"What was it doing?\" asked Piglet. \"Just lumping along,\" said Christopher Robin. \"I don't",
+        "score": 20.347408294677734
+      },
+      {
+        "text": "when he heard this, and he felt that the Heffalump was as good as caught already, but there was just",
+        "score": 23.772708892822266
+      },
+      {
+        "text": "the Heffalump would come along and fall into the Pit, and---- \"Why?\" said Piglet. \"Why what?\" said Pooh. \"Why would",
+        "score": 23.840660095214844
+      },
+      {
+        "text": "Robin finished the mouthful he was eating and said carelessly: \"I saw a Heffalump to-day, Piglet.\" \"What was it doing?\"",
+        "score": 24.185365676879883
+      },
+      {
+        "text": "that sort, but Piglet said nothing. The fact was Piglet was wishing that _he_ had thought about it first. \"I",
+        "score": 24.43459701538086
+      },
+      {
+        "text": "trappy thing than Haycorns. Piglet didn't think so; and they were just going to argue about it, when Piglet remembered",
+        "score": 24.95441436767578
+      },
+      {
+        "text": "\"I think he thought of something he had to go and see about suddenly.\" \"And Piglet?\" \"I think Piglet thought",
+        "score": 25.207965850830078
+      }
+    ],
+    "generated_answer": "Horrible"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "What birthday present did Pooh give Eeyore?",
+    "expected_answer": "Pooh originally intended to give Eeyore a pot of honey, but he ate the honey on the way, so he gave the pot itself as a present.",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nsaid Pooh. CHAPTER VI IN WHICH EEYORE HAS A BIRTHDAY AND GETS TWO PRESENTS Eeyore, the old grey Donkey, stood\nget to Eeyore before Pooh did; for he thought that he would like to be the first one to give\nhe remembered. He had eaten Eeyore's birthday present! \"_Bother!_\" said Pooh. \"What _shall_ I do? I _must_ give him _something_.\"\nlittle present,\" said Pooh excitedly. \"I've had it,\" said Eeyore. Pooh had now splashed across the stream to Eeyore, and\nthe year.\" \"Your birthday?\" said Pooh in great surprise. \"Of course it is. Can't you see? Look at all the\nOwl. \"Many happy returns of Eeyore's birthday,\" said Pooh. \"Oh, is that what it is?\" \"What are you giving him,\nbirthday, do you?\" \"Oh, I see,\" said Pooh. \"It's bad enough,\" said Eeyore, almost breaking down, \"being miserable myself, what\nthere. \"Good morning, Owl,\" he said. \"Good morning, Pooh,\" said Owl. \"Many happy returns of Eeyore's birthday,\" said Pooh. \"Oh,\nChristopher Robin. \"How I do love you!\" \"So do I,\" said Pooh. CHAPTER VI IN WHICH EEYORE HAS A BIRTHDAY\ncourse, Eeyore.\" \"My birthday?\" \"Yes.\" \"Me having a real birthday?\" \"Yes, Eeyore, and I've brought you a present.\" Eeyore took\n\nQuestion: What birthday present did Pooh give Eeyore?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "said Pooh. CHAPTER VI IN WHICH EEYORE HAS A BIRTHDAY AND GETS TWO PRESENTS Eeyore, the old grey Donkey, stood",
+        "score": 20.764829635620117
+      },
+      {
+        "text": "get to Eeyore before Pooh did; for he thought that he would like to be the first one to give",
+        "score": 27.069263458251953
+      },
+      {
+        "text": "he remembered. He had eaten Eeyore's birthday present! \"_Bother!_\" said Pooh. \"What _shall_ I do? I _must_ give him _something_.\"",
+        "score": 28.198505401611328
+      },
+      {
+        "text": "little present,\" said Pooh excitedly. \"I've had it,\" said Eeyore. Pooh had now splashed across the stream to Eeyore, and",
+        "score": 29.23960304260254
+      },
+      {
+        "text": "the year.\" \"Your birthday?\" said Pooh in great surprise. \"Of course it is. Can't you see? Look at all the",
+        "score": 30.47076416015625
+      },
+      {
+        "text": "Owl. \"Many happy returns of Eeyore's birthday,\" said Pooh. \"Oh, is that what it is?\" \"What are you giving him,",
+        "score": 31.012317657470703
+      },
+      {
+        "text": "birthday, do you?\" \"Oh, I see,\" said Pooh. \"It's bad enough,\" said Eeyore, almost breaking down, \"being miserable myself, what",
+        "score": 31.746973037719727
+      },
+      {
+        "text": "there. \"Good morning, Owl,\" he said. \"Good morning, Pooh,\" said Owl. \"Many happy returns of Eeyore's birthday,\" said Pooh. \"Oh,",
+        "score": 32.002838134765625
+      },
+      {
+        "text": "Christopher Robin. \"How I do love you!\" \"So do I,\" said Pooh. CHAPTER VI IN WHICH EEYORE HAS A BIRTHDAY",
+        "score": 33.31140899658203
+      },
+      {
+        "text": "course, Eeyore.\" \"My birthday?\" \"Yes.\" \"Me having a real birthday?\" \"Yes, Eeyore, and I've brought you a present.\" Eeyore took",
+        "score": 33.710693359375
+      }
+    ],
+    "generated_answer": "I don't know"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "Who is the author of Winnie-the-Pooh?",
+    "expected_answer": "Milne",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nof the country where you are located before using this eBook. Title: Winnie-the-Pooh Author: A. A. Milne Illustrator: Ernest H.\neBook. Title: Winnie-the-Pooh Author: A. A. Milne Illustrator: Ernest H. Shepard Release Date: January 3, 2022 [eBook #67098] [Most recently\nwhere you are located before using this eBook. Title: Winnie-the-Pooh Author: A. A. Milne Illustrator: Ernest H. Shepard Release date:\nProject Gutenberg eBook of Winnie-the-Pooh, by A. A. Milne This eBook is for the use of anyone anywhere in the\nis at the bottom, and ready to be introduced to you. Winnie-the-Pooh. When I first heard his name, I said,\nstopping to think, that he was Winnie-the-Pooh. And he was. So, as I have explained the Pooh part, I will\non with the book. A. A. M. CONTENTS I. IN WHICH WE ARE INTRODUCED TO WINNIE-THE-POOH AND SOME BEES, AND\nyou. Winnie-the-Pooh. When I first heard his name, I said, just as you are going to say, \"But I thought\nas which?\"--and sometimes he didn't quite know what he _was_ thinking about. So when Winnie-the-Pooh came stumping along, Eeyore was\nthing is that we can't remember whether Winnie is called after Pooh, or Pooh after Winnie. We did know once,\n\nQuestion: Who is the author of Winnie-the-Pooh?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "of the country where you are located before using this eBook. Title: Winnie-the-Pooh Author: A. A. Milne Illustrator: Ernest H.",
+        "score": 21.433494567871094
+      },
+      {
+        "text": "eBook. Title: Winnie-the-Pooh Author: A. A. Milne Illustrator: Ernest H. Shepard Release Date: January 3, 2022 [eBook #67098] [Most recently",
+        "score": 23.50872802734375
+      },
+      {
+        "text": "where you are located before using this eBook. Title: Winnie-the-Pooh Author: A. A. Milne Illustrator: Ernest H. Shepard Release date:",
+        "score": 24.182544708251953
+      },
+      {
+        "text": "Project Gutenberg eBook of Winnie-the-Pooh, by A. A. Milne This eBook is for the use of anyone anywhere in the",
+        "score": 25.369165420532227
+      },
+      {
+        "text": "is at the bottom, and ready to be introduced to you. Winnie-the-Pooh. When I first heard his name, I said,",
+        "score": 27.042999267578125
+      },
+      {
+        "text": "stopping to think, that he was Winnie-the-Pooh. And he was. So, as I have explained the Pooh part, I will",
+        "score": 28.124069213867188
+      },
+      {
+        "text": "on with the book. A. A. M. CONTENTS I. IN WHICH WE ARE INTRODUCED TO WINNIE-THE-POOH AND SOME BEES, AND",
+        "score": 28.34499740600586
+      },
+      {
+        "text": "you. Winnie-the-Pooh. When I first heard his name, I said, just as you are going to say, \"But I thought",
+        "score": 29.32596206665039
+      },
+      {
+        "text": "as which?\"--and sometimes he didn't quite know what he _was_ thinking about. So when Winnie-the-Pooh came stumping along, Eeyore was",
+        "score": 29.49246597290039
+      },
+      {
+        "text": "thing is that we can't remember whether Winnie is called after Pooh, or Pooh after Winnie. We did know once,",
+        "score": 29.806926727294922
+      }
+    ],
+    "generated_answer": "A. A. Milne"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "What is the name of the donkey character?",
+    "expected_answer": "Eeyore",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nAND POOH FINDS ONE The Old Grey Donkey, Eeyore, stood by himself in a thistly corner of the forest, his\nfor it. CHAPTER IV IN WHICH EEYORE LOSES A TAIL AND POOH FINDS ONE The Old Grey Donkey, Eeyore, stood\nAND GETS TWO PRESENTS Eeyore, the old grey Donkey, stood by the side of the stream, and looked at himself\na good name for bears it is, but the funny thing is that we can't remember whether Winnie is called\nonly a Very Small Animal.\" Rabbit, who had begun to write very busily, looked up and said: \"It is because\nsaid Pooh. CHAPTER VI IN WHICH EEYORE HAS A BIRTHDAY AND GETS TWO PRESENTS Eeyore, the old grey Donkey, stood\nPiglet saying, \"I wonder how it is over Christopher Robin's way\" and Pooh saying, \"I should think poor old Rabbit\nPooh to himself. \"How grand!\" And he began to wonder if all the other animals would know that it was\nit back, and said: \"Well, could you very kindly tell me where Rabbit is?\" \"He has gone to see his\nyou. Winnie-the-Pooh. When I first heard his name, I said, just as you are going to say, \"But I thought\n\nQuestion: What is the name of the donkey character?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "AND POOH FINDS ONE The Old Grey Donkey, Eeyore, stood by himself in a thistly corner of the forest, his",
+        "score": 35.799957275390625
+      },
+      {
+        "text": "for it. CHAPTER IV IN WHICH EEYORE LOSES A TAIL AND POOH FINDS ONE The Old Grey Donkey, Eeyore, stood",
+        "score": 37.90497970581055
+      },
+      {
+        "text": "AND GETS TWO PRESENTS Eeyore, the old grey Donkey, stood by the side of the stream, and looked at himself",
+        "score": 41.746604919433594
+      },
+      {
+        "text": "a good name for bears it is, but the funny thing is that we can't remember whether Winnie is called",
+        "score": 41.91778564453125
+      },
+      {
+        "text": "only a Very Small Animal.\" Rabbit, who had begun to write very busily, looked up and said: \"It is because",
+        "score": 43.60150146484375
+      },
+      {
+        "text": "said Pooh. CHAPTER VI IN WHICH EEYORE HAS A BIRTHDAY AND GETS TWO PRESENTS Eeyore, the old grey Donkey, stood",
+        "score": 44.2301025390625
+      },
+      {
+        "text": "Piglet saying, \"I wonder how it is over Christopher Robin's way\" and Pooh saying, \"I should think poor old Rabbit",
+        "score": 44.885719299316406
+      },
+      {
+        "text": "Pooh to himself. \"How grand!\" And he began to wonder if all the other animals would know that it was",
+        "score": 45.22203063964844
+      },
+      {
+        "text": "it back, and said: \"Well, could you very kindly tell me where Rabbit is?\" \"He has gone to see his",
+        "score": 45.357601165771484
+      },
+      {
+        "text": "you. Winnie-the-Pooh. When I first heard his name, I said, just as you are going to say, \"But I thought",
+        "score": 45.443450927734375
+      }
+    ],
+    "generated_answer": "Eeyore"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "Who leads the expedition to the North Pole?",
+    "expected_answer": "Christopher",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nhad a tiring day. You remember how he discovered the North Pole; well, he was so proud of this that\n\"We're going to discover the North Pole.\" \"Oh!\" said Pooh again. \"What _is_ the North Pole?\" he asked. \"It's just\nsaid Christopher Robin solemnly, \"the Expedition is over. You have found the North Pole!\" \"Oh!\" said Pooh. Eeyore was sitting\nheard this, and suggested that they should have an Expotition to discover the East Pole, but Christopher Robin had thought\nsaid Eeyore. \"I'm just telling everybody. We can look for the North Pole, or we can play 'Here we go\nout to discover the East Pole by himself. Whether he discovered it or not, I forget; but he was so\nsaid. They stuck the pole in the ground, and Christopher Robin tied a message on to it. NORTH POLE DISCOVERED\nCHRISTOPHER ROBIN LEADS AN EXPOTITION TO THE NORTH POLE One fine day Pooh had stumped up to the top of\n_you_ don't know, What does the North Pole _look_ like?\" \"Well,\" said Rabbit, stroking his whiskers. \"Now you're asking me.\"\nso,\" said Rabbit, looking important. \"It's--I wondered--It's only--Rabbit, I suppose _you_ don't know, What does the North Pole _look_ like?\"\n\nQuestion: Who leads the expedition to the North Pole?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "had a tiring day. You remember how he discovered the North Pole; well, he was so proud of this that",
+        "score": 34.04462814331055
+      },
+      {
+        "text": "\"We're going to discover the North Pole.\" \"Oh!\" said Pooh again. \"What _is_ the North Pole?\" he asked. \"It's just",
+        "score": 38.20310592651367
+      },
+      {
+        "text": "said Christopher Robin solemnly, \"the Expedition is over. You have found the North Pole!\" \"Oh!\" said Pooh. Eeyore was sitting",
+        "score": 38.42763900756836
+      },
+      {
+        "text": "heard this, and suggested that they should have an Expotition to discover the East Pole, but Christopher Robin had thought",
+        "score": 39.888023376464844
+      },
+      {
+        "text": "said Eeyore. \"I'm just telling everybody. We can look for the North Pole, or we can play 'Here we go",
+        "score": 40.58946990966797
+      },
+      {
+        "text": "out to discover the East Pole by himself. Whether he discovered it or not, I forget; but he was so",
+        "score": 40.7341423034668
+      },
+      {
+        "text": "said. They stuck the pole in the ground, and Christopher Robin tied a message on to it. NORTH POLE DISCOVERED",
+        "score": 40.775779724121094
+      },
+      {
+        "text": "CHRISTOPHER ROBIN LEADS AN EXPOTITION TO THE NORTH POLE One fine day Pooh had stumped up to the top of",
+        "score": 41.778228759765625
+      },
+      {
+        "text": "_you_ don't know, What does the North Pole _look_ like?\" \"Well,\" said Rabbit, stroking his whiskers. \"Now you're asking me.\"",
+        "score": 41.93594741821289
+      },
+      {
+        "text": "so,\" said Rabbit, looking important. \"It's--I wondered--It's only--Rabbit, I suppose _you_ don't know, What does the North Pole _look_ like?\"",
+        "score": 42.0289421081543
+      }
+    ],
+    "generated_answer": "Christopher Robin"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "Who lives in a house with a sign that says 'TRESPASSERS W'?",
+    "expected_answer": "Piglet",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nlived in the middle of the house. Next to his house was a piece of broken board which had: \"TRESPASSERS\nhouse was a piece of broken board which had: \"TRESPASSERS W\" on it. When Christopher Robin asked the Piglet what\ntime whoever lives here is answering this door.\" And he knocked again. \"But Pooh,\" said Piglet, \"it's your own house!\"\nsaid yes, you could, because his grandfather was, and it was short for Trespassers Will, which was short for Trespassers\nhad been in the family for a long time, Christopher Robin said you _couldn't_ be called Trespassers W, and Piglet\nRobin said you _couldn't_ be called Trespassers W, and Piglet said yes, you could, because his grandfather was, and it\ncan tell with Heffalumps. Well, good night!\" \"Good night!\" And off Piglet trotted to his house TRESPASSERS W, while Pooh\nknow how it is in the Forest. One can't have _anybody_ coming into one's house. One has to be _careful_.\nknow what Eeyore is--and there he was, and----What a long time whoever lives here is answering this door.\" And he\nPooh what his Grandfather Trespassers W had done to Remove Stiffness after Tracking, and how his Grandfather Trespassers W had\n\nQuestion: Who lives in a house with a sign that says 'TRESPASSERS W'?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "lived in the middle of the house. Next to his house was a piece of broken board which had: \"TRESPASSERS",
+        "score": 25.07037353515625
+      },
+      {
+        "text": "house was a piece of broken board which had: \"TRESPASSERS W\" on it. When Christopher Robin asked the Piglet what",
+        "score": 28.286502838134766
+      },
+      {
+        "text": "time whoever lives here is answering this door.\" And he knocked again. \"But Pooh,\" said Piglet, \"it's your own house!\"",
+        "score": 29.740928649902344
+      },
+      {
+        "text": "said yes, you could, because his grandfather was, and it was short for Trespassers Will, which was short for Trespassers",
+        "score": 32.3266487121582
+      },
+      {
+        "text": "had been in the family for a long time, Christopher Robin said you _couldn't_ be called Trespassers W, and Piglet",
+        "score": 33.551876068115234
+      },
+      {
+        "text": "Robin said you _couldn't_ be called Trespassers W, and Piglet said yes, you could, because his grandfather was, and it",
+        "score": 33.96306228637695
+      },
+      {
+        "text": "can tell with Heffalumps. Well, good night!\" \"Good night!\" And off Piglet trotted to his house TRESPASSERS W, while Pooh",
+        "score": 34.77314758300781
+      },
+      {
+        "text": "know how it is in the Forest. One can't have _anybody_ coming into one's house. One has to be _careful_.",
+        "score": 35.2507209777832
+      },
+      {
+        "text": "know what Eeyore is--and there he was, and----What a long time whoever lives here is answering this door.\" And he",
+        "score": 36.19770812988281
+      },
+      {
+        "text": "Pooh what his Grandfather Trespassers W had done to Remove Stiffness after Tracking, and how his Grandfather Trespassers W had",
+        "score": 36.41101837158203
+      }
+    ],
+    "generated_answer": "Christopher Robin"
+  },
+  {
+    "group_id": "Team_Neon",
+    "question": "What kind of animal is Kanga?",
+    "expected_answer": "Kangaroo",
+    "generated_promt": "You are an assistant answering questions using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\nSmall Animal. 5. Like Roo. 6. But Kanga would have to be looking the other way first, so as not\nthat a Kanga was Generally Regarded as One of the Fiercer Animals. I am not frightened of Fierce Animals in\nKanga wouldn't know the difference, because Piglet is a Very Small Animal. 5. Like Roo. 6. But Kanga would have\nRabbit. \"Is it a blackbird or a starling?\" And then at last Kanga did turn her head to look. And\nin his paws, as fast as he could. \"Why, where's Rabbit?\" said Kanga, turning round again. \"Are you all right,\nused to it. \"I knew it wasn't Piglet,\" said Kanga. \"I wonder who it can be.\" \"Perhaps it's some relation\nbit. \"I was talking to Christopher Robin, and he said that a Kanga was Generally Regarded as One of the\nKanga so as she doesn't notice anything.\" \"Oh! What about?\" \"Anything you like.\" \"You mean like telling her a little\nall the way to Kanga's house. Of course as soon as Kanga unbuttoned her pocket, she saw what had happened.\nhe can always Think of a Clever Plan. There's Kanga. She isn't Clever, Kanga isn't, but she would be so\n\nQuestion: What kind of animal is Kanga?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "Small Animal. 5. Like Roo. 6. But Kanga would have to be looking the other way first, so as not",
+        "score": 28.956144332885742
+      },
+      {
+        "text": "that a Kanga was Generally Regarded as One of the Fiercer Animals. I am not frightened of Fierce Animals in",
+        "score": 29.618106842041016
+      },
+      {
+        "text": "Kanga wouldn't know the difference, because Piglet is a Very Small Animal. 5. Like Roo. 6. But Kanga would have",
+        "score": 31.891036987304688
+      },
+      {
+        "text": "Rabbit. \"Is it a blackbird or a starling?\" And then at last Kanga did turn her head to look. And",
+        "score": 34.23927688598633
+      },
+      {
+        "text": "in his paws, as fast as he could. \"Why, where's Rabbit?\" said Kanga, turning round again. \"Are you all right,",
+        "score": 37.23651123046875
+      },
+      {
+        "text": "used to it. \"I knew it wasn't Piglet,\" said Kanga. \"I wonder who it can be.\" \"Perhaps it's some relation",
+        "score": 38.6504020690918
+      },
+      {
+        "text": "bit. \"I was talking to Christopher Robin, and he said that a Kanga was Generally Regarded as One of the",
+        "score": 38.67449951171875
+      },
+      {
+        "text": "Kanga so as she doesn't notice anything.\" \"Oh! What about?\" \"Anything you like.\" \"You mean like telling her a little",
+        "score": 39.47404479980469
+      },
+      {
+        "text": "all the way to Kanga's house. Of course as soon as Kanga unbuttoned her pocket, she saw what had happened.",
+        "score": 39.49366760253906
+      },
+      {
+        "text": "he can always Think of a Clever Plan. There's Kanga. She isn't Clever, Kanga isn't, but she would be so",
+        "score": 39.81135559082031
+      }
+    ],
+    "generated_answer": "Small Animal."
+  }
+]

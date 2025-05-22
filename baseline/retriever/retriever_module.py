@@ -53,7 +53,7 @@ class Retriever:
         self.index = faiss.IndexFlatL2(embedding_matrix.shape[1])
         self.index.add(embedding_matrix)
 
-    def query(self, query_text, top_k=3):
+    def query(self, query_text, top_k=10):
         """
         Query the retriever to find the most relevant document chunks based on the similarity score.
         """

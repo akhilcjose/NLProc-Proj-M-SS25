@@ -23,7 +23,7 @@ class Generator:
             prompt = (
                 "You are an assistant answering questions using only the provided context.\n"
                 "If the answer is not in the context, respond with 'I don't know.'\n"
-                "Respond in one complete sentence.\n\n"
+                #"Respond in one complete sentence.\n\n"
                 f"Context:\n{context}\n\nQuestion: {question}\nAnswer:"
             )
 
