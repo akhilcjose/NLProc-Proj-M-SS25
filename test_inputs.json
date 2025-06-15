@@ -1,24 +1,42 @@
 [
   {
-    "timestamp": "2025-05-18T14:30:00Z",
-    "question": "What is natural language processing?",
-    "retrieved_chunks": [
-      "NLP is a subfield of AI that deals with the interaction between computers and humans using natural language.",
-      "It involves tasks like text classification, translation, and summarization."
-    ],
-    "prompt": "Answer the question using only the provided context.",
-    "generated_answer": "Natural language processing is a field of AI that enables computers to understand and generate human language.",
-    "group_id": "Team_Neon"
+    "question": "Who is Winnie-the-Pooh?",
+    "answer": "Winnie-the-Pooh is a bear who lives in the forest under the name of Sanders and enjoys eating honey."
   },
   {
-    "timestamp": "2025-05-18T14:32:10Z",
-    "question": "What is the Turing Test?",
-    "retrieved_chunks": [
-      "The Turing Test was proposed by Alan Turing as a way to evaluate machine intelligence.",
-      "A machine passes the test if it can engage in conversation indistinguishably from a human."
-    ],
-    "prompt": "Answer the question based only on the context provided.",
-    "generated_answer": "The Turing Test is a method of assessing if a machine can mimic human responses in conversation.",
-    "group_id": "Team_Neon"
+    "question": "Why did Pooh climb the tree?",
+    "answer": "Pooh climbed the tree because he heard buzzing and thought there were bees making honey, which he wanted to eat."
+  },
+  {
+    "question": "What happened when Pooh tried to get honey with a balloon?",
+    "answer": "Pooh tried to float to the honey using a blue balloon, pretending to be a little black rain cloud, but the bees got suspicious and he had to be brought down by Christopher Robin shooting the balloon."
+  },
+  {
+    "question": "Why did Pooh get stuck in Rabbit's doorway?",
+    "answer": "Pooh got stuck in Rabbit's doorway because he had eaten too much honey and condensed milk during a visit."
+  },
+  {
+    "question": "How did they get Pooh out of Rabbit's door?",
+    "answer": "They had to wait a week for Pooh to get thin again, and then pulled him out while Rabbit's friends and Christopher Robin helped."
+  },
+  {
+    "question": "What is a Woozle?",
+    "answer": "A Woozle is a mysterious creature that Pooh and Piglet thought they were tracking, but they were actually following their own footprints."
+  },
+  {
+    "question": "What did Pooh do when Eeyore lost his tail?",
+    "answer": "Pooh visited Owl for advice and eventually discovered that Owl had taken Eeyore’s tail and used it as a bell rope."
+  },
+  {
+    "question": "What did Piglet and Pooh use to try to catch a Heffalump?",
+    "answer": "They dug a Very Deep Pit and put a jar of honey at the bottom to lure the Heffalump."
+  },
+  {
+    "question": "What did Piglet think the Heffalump was?",
+    "answer": "Piglet thought the Heffalump was a horrible creature in the trap, but it was actually Pooh with his head stuck in the honey jar."
+  },
+  {
+    "question": "What birthday present did Pooh give Eeyore?",
+    "answer": "Pooh originally intended to give Eeyore a pot of honey, but he ate the honey on the way, so he gave the pot itself as a present."
   }
 ]

@@ -34,18 +34,12 @@ def main():
     file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
     test_input_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/test_inputs.json"
     log_output_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/log.json"
-
-    # Load document
     document = load_txt_file(file_path)
     if not document:
         return
-
-    # Load test inputs
     test_data = load_test_inputs(test_input_path)
     if not test_data:
         return
-
-    # Initialize components
     retriever = Retriever()
     retriever.add_documents([document])
 
