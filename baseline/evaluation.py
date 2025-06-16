@@ -70,9 +70,9 @@ def main():
                 "group_id":"Team_Neon",
                 "question": question,
                 "expected_answer": ground_truth,
+                "generated_answer": generated_answer,
                 "generated_promt": generated_promt,
-                "retrieved_chunks": retrieved_chunks,
-                "generated_answer": generated_answer
+                "retrieved_chunks": retrieved_chunks
             })
 
         except Exception as e:

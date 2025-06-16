@@ -1,7 +1,13 @@
+import os
 import faiss
 faiss.omp_set_num_threads(1)
+import fitz
 import numpy as np
 from sentence_transformers import SentenceTransformer
+from sentence_transformers import CrossEncoder
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from sklearn.preprocessing import normalize
+
 
 
 
@@ -13,31 +19,42 @@ class Retriever:
         self.embeddings = []  # Store the embeddings for those chunks
         self.index = None  # FAISS index will be built when documents are added
 
-    def chunk_document(self, document, chunk_size=20, overlap=10):
+    def chunk_document(self, document, chunk_size=1000, overlap=400):
         """
         Chunk the document into smaller pieces.
         """
-        words = document.split()
-        chunks = []
-        for i in range(0, len(words), chunk_size - overlap):
-            chunk = ' '.join(words[i:i + chunk_size])
-            chunks.append(chunk)
-        return chunks
-
-    def add_documents(self, documents):
+        splitter = RecursiveCharacterTextSplitter(
+        chunk_size=chunk_size,
+        chunk_overlap=overlap,
+        separators=["\n\n", "\n", ".", " ", ""]
+        )
+        return splitter.split_text(document)
+    
+    def read_pdf(self, file_path):
+        """
+        Extracts text from a PDF file.
+        """
+        if not os.path.exists(file_path):
+            raise FileNotFoundError(f"File not found: {file_path}")
+        
+        doc = fitz.open(file_path)
+        text = ""
+        for page in doc:
+            text += page.get_text()
+        doc.close()
+        return text
+    
+    def add_documents(self, document=None, pdf_path=None):
         """
         Add documents to the retriever by chunking them, creating embeddings, and building a FAISS index.
         """
-        if not documents:
-            raise ValueError("No documents provided to add.")
-
-        chunks = []
-        for doc in documents:
-            chunks += self.chunk_document(doc)
-
-        # Check if model is initialized
-        if not hasattr(self, 'model'):
-            raise AttributeError("Model is not initialized")
+        if document:
+            chunks = self.chunk_document(document)
+        elif pdf_path:
+            text = self.read_pdf(pdf_path)
+            chunks = self.chunk_document(text)
+        else:
+            raise ValueError("Provide either `document` or `pdf_path`.")
 
         # Generate embeddings for the chunks
         embeddings = self.model.encode(chunks)
@@ -47,13 +64,13 @@ class Retriever:
         self.embeddings.extend(embeddings)
 
         # Convert embeddings to a numpy array for FAISS
-        embedding_matrix = np.array(self.embeddings).astype('float32')
+        embedding_matrix = normalize(np.array(self.embeddings).astype('float32'), axis=1)
 
         # Create and build the FAISS index
-        self.index = faiss.IndexFlatL2(embedding_matrix.shape[1])
+        self.index = faiss.IndexFlatIP(embedding_matrix.shape[1])
         self.index.add(embedding_matrix)
 
-    def query(self, query_text, top_k=10):
+    def query(self, query_text, top_k=3):
         """
         Query the retriever to find the most relevant document chunks based on the similarity score.
         """
@@ -62,7 +79,7 @@ class Retriever:
             raise ValueError("No documents indexed. Please add documents first.")
 
         # Generate embedding for the query
-        query_embedding = self.model.encode([query_text]).astype("float32")
+        query_embedding = self.model.encode([query_text],normalize_embeddings=True).astype("float32")
 
         # Perform the search
         D, I = self.index.search(query_embedding, top_k)
