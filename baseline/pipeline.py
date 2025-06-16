@@ -14,7 +14,8 @@ def load_txt_file(file_path):
 
 def main():
     print("RAG Pipeline: Text File + Question Answering")
-    file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
+    #file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
+    file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/researchPaper.pdf"
     if not os.path.exists(file_path):
         print(f"File not found: {file_path}")
         return
@@ -24,10 +25,10 @@ def main():
         document = load_txt_file(file_path)
         if not document:
             return
-        retriever.add_documents(documents=[document])
+        retriever.add_documents(document=document)
 
     elif file_path.lower().endswith('.pdf'):
-        retriever.add_documents(pdf_paths=[file_path])
+        retriever.add_documents(pdf_path=file_path)
 
     else:
         print(f"Unsupported file type: {file_path}")
@@ -51,7 +52,7 @@ def main():
                 question=question,
                 retrieved_chunks=retrieved_chunks
             )
-            print(f"🤖 Answer: {answer}\n")
+            print(f"Answer: {answer}\n")
         except Exception as e:
             print(f"Error: {e}")
 if __name__ == "__main__":
