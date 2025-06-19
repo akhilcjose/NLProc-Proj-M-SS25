@@ -1,22 +1,99 @@
 import os
 import json
+from baseline.retriever.retriever_module import Retriever
+from baseline.generator.generator import Generator
 
-current_dir = os.path.dirname(os.path.abspath(__file__))
-json_path = os.path.join(current_dir, '..', 'test_inputs.json')
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
-print("Current script dir:", current_dir)
-print("Looking for JSON file at:", json_path)
+def load_txt_file(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return f.read()
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        return None
 
-# List files in the directory where it expects JSON
-print("Files in JSON folder:", os.listdir(os.path.dirname(json_path)))
+def load_test_inputs(json_path):
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Error reading test input JSON: {e}")
+        return []
 
-with open(json_path, 'r') as f:
-    test_data = json.load(f)
+def save_log(log_data, output_path):
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(log_data, f, indent=2)
+    except Exception as e:
+        print(f"Error writing log file: {e}")
 
-for entry in test_data:
-    print(f"Time: {entry['timestamp']}")
-    print(f"Question: {entry['question']}")
-    print(f"Answer: {entry['generated_answer']}")
-    print(f"group_id:{entry['group_id']}")
-    print(f"retrieved_chunks:{entry['retrieved_chunks']}")
-    print()
+def main():
+    print("RAG Pipeline: Running on test_inputs.json")
+
+    file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
+    test_input_path = "test_inputs.json"
+    log_output_path = "log.json"
+
+    # Load document
+    document = load_txt_file(file_path)
+    if not document:
+        return
+
+    # Load test inputs
+    test_data = load_test_inputs(test_input_path)
+    if not test_data:
+        return
+
+    # Initialize components
+    retriever = Retriever()
+    retriever.add_documents([document])
+
+    generator = Generator()
+
+    log_entries = []
+
+    for idx, test_case in enumerate(test_data):
+        question = test_case["question"]
+        ground_truth = test_case["answer"]
+
+        print(f"[{idx+1}] Processing: {question}")
+
+        try:
+            retrieved_chunks = retriever.query(question, top_k=3)
+            generated_promt = generator.build_prompt(
+                task="qa",
+                question=question,
+                retrieved_chunks=retrieved_chunks
+            )
+            generated_answer = generator.generate_answer(
+                task="qa",
+                question=question,
+                retrieved_chunks=retrieved_chunks
+            )
+
+            log_entries.append({
+                "question": question,
+                "ground_truth_answer": ground_truth,
+                "retrieved_chunks": retrieved_chunks,
+                "generated_answer": generated_answer
+            })
+
+        except Exception as e:
+            print(f"Error: {e}")
+            log_entries.append({
+                "question": question,
+                "ground_truth_answer": ground_truth,
+                "retrieved_chunks": [],
+                "generated_answer": None,
+                "error": str(e)
+            })
+
+    save_log(log_entries, log_output_path)
+    print(f"\nResults saved to {log_output_path}")
+
+if __name__ == "__main__":
+    import multiprocessing
+    multiprocessing.set_start_method("spawn", force=True)
+    main()

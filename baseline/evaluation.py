@@ -1,0 +1,94 @@
+import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+import json
+from retriever.retriever_module import Retriever
+from generator.generator import Generator
+
+def load_txt_file(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return f.read()
+    except Exception as e:
+        print(f"Error reading file: {e}")
+        return None
+
+def load_test_inputs(json_path):
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"Error reading test input JSON: {e}")
+        return []
+
+def save_log(log_data, output_path):
+    try:
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(log_data, f, indent=2)
+    except Exception as e:
+        print(f"Error writing log file: {e}")
+
+def main():
+    print("RAG evaluation: Running on test_inputs.json")
+
+    file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
+    test_input_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/test_inputs.json"
+    log_output_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/log.json"
+    document = load_txt_file(file_path)
+    if not document:
+        return
+    test_data = load_test_inputs(test_input_path)
+    if not test_data:
+        return
+    retriever = Retriever()
+    retriever.add_documents([document])
+
+    generator = Generator()
+
+    log_entries = []
+
+    for idx, test_case in enumerate(test_data):
+        question = test_case["question"]
+        ground_truth = test_case["answer"]
+
+        print(f"[{idx+1}] Processing: {question}")
+
+        try:
+            retrieved_chunks = retriever.query(question, top_k=10)
+            generated_promt = generator.build_prompt(
+                task="qa",
+                question=question,
+                retrieved_chunks=retrieved_chunks
+            )
+            generated_answer = generator.generate_answer(
+                task="qa",
+                question=question,
+                retrieved_chunks=retrieved_chunks
+            )
+
+            log_entries.append({
+                "group_id":"Team_Neon",
+                "question": question,
+                "expected_answer": ground_truth,
+                "generated_answer": generated_answer,
+                "generated_promt": generated_promt,
+                "retrieved_chunks": retrieved_chunks
+            })
+
+        except Exception as e:
+            print(f"Error: {e}")
+            log_entries.append({
+                "question": question,
+                "ground_truth_answer": ground_truth,
+                "retrieved_chunks": [],
+                "generated_answer": None,
+                "error": str(e)
+            })
+
+    save_log(log_entries, log_output_path)
+    print(f"\n Results saved")
+
+if __name__ == "__main__":
+    import multiprocessing
+    multiprocessing.set_start_method("spawn", force=True)
+    main()
