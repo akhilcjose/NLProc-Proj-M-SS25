@@ -14,8 +14,8 @@ def load_txt_file(file_path):
 
 def main():
     print("RAG Pipeline: Text File + Question Answering")
-    #file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
-    file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/researchPaper.pdf"
+    file_path = "/Users/delnajose/Documents/Semester 4/NLP Project/week 8/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
+    #file_path = "/Users/delnajose/Documents/Semester 4/NLP Project/week 8/NLProc-Proj-M-SS25/baseline/researchPaper.pdf"
     if not os.path.exists(file_path):
         print(f"File not found: {file_path}")
         return

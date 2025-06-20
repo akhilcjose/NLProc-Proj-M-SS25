@@ -1,4 +1,7 @@
+import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import json
 from baseline.retriever.retriever_module import Retriever
 from baseline.generator.generator import Generator
@@ -32,7 +35,8 @@ def save_log(log_data, output_path):
 def main():
     print("RAG Pipeline: Running on test_inputs.json")
 
-    file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
+    file_path = "/Users/delnajose/Documents/Semester 4/NLP Project/week 8/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
+    #file_path= "/Users/delnajose/Documents/Semester 4/NLP Project/week 8/NLProc-Proj-M-SS25/baseline/researchPaper.pdf"
     test_input_path = "test_inputs.json"
     log_output_path = "log.json"
 
@@ -48,7 +52,11 @@ def main():
 
     # Initialize components
     retriever = Retriever()
-    retriever.add_documents([document])
+   
+   
+
+    #retriever.add_documents([document])
+    retriever.add_documents(document=document)
 
     generator = Generator()
 

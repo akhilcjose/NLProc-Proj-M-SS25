@@ -1,4 +1,7 @@
+import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 import json
@@ -31,9 +34,9 @@ def save_log(log_data, output_path):
 def main():
     print("RAG evaluation: Running on test_inputs.json")
 
-    file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
-    test_input_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/test_inputs.json"
-    log_output_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/log.json"
+    file_path = "/Users/delnajose/Documents/Semester 4/NLP Project/week 8/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
+    test_input_path = "/Users/delnajose/Documents/Semester 4/NLP Project/week 8/NLProc-Proj-M-SS25/baseline/test_inputs.json"
+    log_output_path = "/Users/delnajose/Documents/Semester 4/NLP Project/week 8/NLProc-Proj-M-SS25/log.json"
     document = load_txt_file(file_path)
     if not document:
         return
@@ -41,7 +44,7 @@ def main():
     if not test_data:
         return
     retriever = Retriever()
-    retriever.add_documents([document])
+    retriever.add_documents(document=document)
 
     generator = Generator()
 
