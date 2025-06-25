@@ -79,9 +79,13 @@ class Generator:
         with torch.no_grad():
             output = self.model.generate(
                 **inputs,
-                max_new_tokens=100,
+                do_sample=True,
+                top_k=50,
+                top_p=0.80,
+                max_new_tokens=500,
                 num_beams=4,
-                early_stopping=True
+                early_stopping=True,
+                temperature=0.4,
             )
 
         answer = self.tokenizer.decode(output[0], skip_special_tokens=True)

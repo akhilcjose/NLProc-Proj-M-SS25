@@ -30,18 +30,19 @@ def save_log(log_data, output_path):
 
 def main():
     print("RAG evaluation: Running on test_inputs.json")
-
-    file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
-    test_input_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/test_inputs.json"
+    file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/researchPaper.pdf"
+    #file_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/winnie_the_pooh.txt"
+    #test_input_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/test_inputs.json"
+    test_input_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/test_inputs01.json"
     log_output_path = "/Users/akhiljose/Projects/NLProc_Master_Project/NLProc-Proj-M-SS25/baseline/log.json"
-    document = load_txt_file(file_path)
-    if not document:
-        return
+    #document = load_txt_file(file_path)
+    #if not document:
+    #    return
     test_data = load_test_inputs(test_input_path)
     if not test_data:
         return
     retriever = Retriever()
-    retriever.add_documents([document])
+    retriever.add_documents(pdf_path=file_path)
 
     generator = Generator()
 

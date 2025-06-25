@@ -1,0 +1,54 @@
+[
+  {
+    "question": "What is the primary goal of the GdVAE model?",
+    "answer": "The GdVAE model aims to unify self-explainable models and counterfactual explanations by using a conditional variational autoencoder with a Gaussian discriminant analysis classifier."
+  },
+  {
+    "question": "How does GdVAE generate counterfactual explanations?",
+    "answer": "GdVAE generates counterfactuals by linearly manipulating the latent space using a discriminant direction derived from a transparent classifier, and then decoding the modified latent vector into an image."
+  },
+  {
+    "question": "What are the four key properties the GdVAE seeks to achieve in counterfactual explanations?",
+    "answer": "The four properties are realism, proximity, consistency, and transparency."
+  },
+  {
+    "question": "What makes GdVAE a self-explainable model?",
+    "answer": "GdVAE is self-explainable because it uses class-specific prototypes in a white-box linear classifier, making its decision logic transparent and interpretable."
+  },
+  {
+    "question": "What role does the Gaussian Discriminant Analysis (GDA) classifier play in GdVAE?",
+    "answer": "The GDA classifier in GdVAE provides class-specific prototypes and enables a closed-form linear decision boundary in the latent space, supporting transparent classification and explanation."
+  },
+  {
+    "question": "How does GdVAE ensure consistency between classifier output and generated counterfactuals?",
+    "answer": "GdVAE uses a consistency loss that penalizes the KL divergence between the encoded counterfactual and its expected latent representation, ensuring alignment between classifier confidence and the generated image."
+  },
+  {
+    "question": "What datasets were used to evaluate the GdVAE model?",
+    "answer": "GdVAE was evaluated on MNIST, CelebA, CIFAR-10, and the high-resolution FFHQ dataset."
+  },
+  {
+    "question": "How does GdVAE compare to post-hoc methods in terms of performance?",
+    "answer": "GdVAE performs comparably or better than post-hoc methods like EBPE, ECINN, and C3LT across metrics like consistency, realism, and proximity, while offering built-in transparency."
+  },
+  {
+    "question": "What are local and global counterfactuals in GdVAE?",
+    "answer": "Local counterfactuals minimize the change from the input while ensuring prediction flip, whereas global counterfactuals move towards a class prototype to reveal model-wide decision logic."
+  },
+  {
+    "question": "What is the significance of linear explainer functions in GdVAE?",
+    "answer": "Linear explainer functions allow GdVAE to analytically compute counterfactuals, ensuring efficiency and full transparency in latent space traversal."
+  },
+  {
+  "question": "How are counterfactual explanations different from traditional heatmap techniques?",
+  "answer": "Unlike heatmap methods, counterfactual explanations explore 'what-if' scenarios by modifying input concepts to generate different outcomes, enabling a deeper understanding of decision boundaries."
+},
+{
+  "question": "What are the main contributions of the GdVAE paper?",
+  "answer": "The paper introduces a self-explainable model based on a CVAE, integrates prototype-based explanations with counterfactual generation, provides analytical counterfactuals in latent space, and achieves transparency, proximity, and consistency in explanations."
+},
+{
+  "question": "What problem does GdVAE aim to solve?",
+  "answer": "GdVAE addresses the gap between transparent self-explainable models and high-quality counterfactual explanation methods by integrating them into a unified framework using a conditional variational autoencoder and a Gaussian discriminant classifier."
+}
+]
