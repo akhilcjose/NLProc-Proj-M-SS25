@@ -42,13 +42,6 @@ class Retriever:
             r'(?=\n?\d{1,2}(?:\.\d{1,2})*\s+[A-Z][^\n]+|(?<=\n)[A-Z][A-Za-z ]{3,}\.\n)'
         )
 
-         # Find all section headers (matches)
-        headers = section_pattern.findall(document)
-        print("Detected section headers:")
-        for idx, header in enumerate(headers):
-            print(f"{idx+1}: {repr(header)}")
-
-        # Split by section headers
         sections = section_pattern.split(document)
         sections = [sec.strip() for sec in sections if sec.strip()]
     

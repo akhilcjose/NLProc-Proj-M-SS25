@@ -1,13 +1,16 @@
+import requests
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch
 torch.set_num_threads(1)
 from typing import List, Optional
 
 class Generator:
-    def __init__(self, model_name='google/flan-t5-base', max_length=512):
+    def __init__(self, model_name='google/flan-t5-base', max_length=1024):
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
         self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
         self.max_length = max_length
+        self.URL = "http://localhost:8080/v1/chat/completions"
+        self.LLAMA_CPP_MODEL = "mistral-7b-instruct-v0.1.Q3_K_S"
 
     def build_prompt(
         self, 
@@ -21,9 +24,8 @@ class Generator:
 
         if task == "qa":
             prompt = (
-                "You are an assistant answering questions using only the provided context.\n"
+                "Answering the question using only the provided context.\n"
                 "If the answer is not in the context, respond with 'I don't know.'\n"
-                #"Respond in one complete sentence.\n\n"
                 f"Context:\n{context}\n\nQuestion: {question}\nAnswer:"
             )
 
@@ -74,7 +76,7 @@ class Generator:
             text_to_classify=text_to_classify
         )
 
-        inputs = self.tokenizer(prompt, return_tensors="pt", max_length=self.max_length, truncation=True)
+        inputs = self.tokenizer(prompt, return_tensors="pt", max_length=self.max_length, truncation=False)
 
         with torch.no_grad():
             output = self.model.generate(
@@ -82,11 +84,46 @@ class Generator:
                 do_sample=True,
                 top_k=50,
                 top_p=0.80,
-                max_new_tokens=500,
+                max_new_tokens=self.max_length,
                 num_beams=4,
                 early_stopping=True,
-                temperature=0.4,
+                temperature=0.7,
             )
 
         answer = self.tokenizer.decode(output[0], skip_special_tokens=True)
         return answer
+    def powerfulLLM(
+            self,
+        task: str,
+        question: Optional[str] = None,
+        retrieved_chunks: Optional[List[dict]] = None,
+        options: Optional[List[str]] = None,
+        text_to_classify: Optional[str] = None
+    )-> str:
+        prompt = self.build_prompt(
+            task=task,
+            question=question,
+            retrieved_chunks=retrieved_chunks,
+            options=options,
+            text_to_classify=text_to_classify
+        )
+        try:
+            response = requests.post(self.URL, json={
+                "model": self.LLAMA_CPP_MODEL,
+                "messages": [
+                    {"role": "system", "content": "You are a helpful assistant. Only answer questions based on the provided prompt. Do not guess or add unrelated information."},
+                    {"role": "user", "content": prompt}
+                ],
+                "temperature": 0.2,
+                "top_p": 0.8,
+                "max_tokens": 528,
+                "presence_penalty": 0.0,
+                "frequency_penalty": 0.0,
+                })
+
+            result = response.json()
+            result01=result["choices"][0]["message"]["content"]
+            return result01
+        except Exception as e:
+            print(f"Error analyzing tweet: {e}")
+            return None

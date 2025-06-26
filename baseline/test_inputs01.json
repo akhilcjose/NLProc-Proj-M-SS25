@@ -50,5 +50,45 @@
 {
   "question": "What problem does GdVAE aim to solve?",
   "answer": "GdVAE addresses the gap between transparent self-explainable models and high-quality counterfactual explanation methods by integrating them into a unified framework using a conditional variational autoencoder and a Gaussian discriminant classifier."
-}
+},
+  {
+    "question": "What does GdVAE stand for?",
+    "answer": "Gaussian Discriminant Variational Autoencoder"
+  },
+  {
+    "question": "What type of model is GdVAE?",
+    "answer": "A self-explainable model with counterfactual explanations"
+  },
+  {
+    "question": "Which datasets were used in the experiments?",
+    "answer": "MNIST, CelebA, CIFAR-10, and FFHQ"
+  },
+  {
+    "question": "What is the main advantage of GdVAE?",
+    "answer": "It combines transparent classification and counterfactual explanations"
+  },
+  {
+    "question": "Which classifier does GdVAE use?",
+    "answer": "Gaussian Discriminant Analysis (GDA) classifier"
+  },
+  {
+    "question": "What kind of prototypes does GdVAE use?",
+    "answer": "Class-specific prototypes in the latent space"
+  },
+  {
+    "question": "Does GdVAE use a post-hoc explanation method?",
+    "answer": "No, it integrates explanations directly during training"
+  },
+  {
+    "question": "What are the three main properties of counterfactuals?",
+    "answer": "Realism, consistency, and proximity"
+  },
+  {
+    "question": "What does the consistency loss in GdVAE ensure?",
+    "answer": "That the counterfactual generates the desired classifier output"
+  },
+  {
+    "question": "How are counterfactuals generated in GdVAE?",
+    "answer": "By linearly modifying the latent vector"
+  }
 ]

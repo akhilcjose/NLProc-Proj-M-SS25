@@ -22,7 +22,10 @@
         "text": "criminant analysis model (GDA) [18] and does not have any additional parame-\nters. Its purpose is to transform the features z from the recognition network and\nmarginalization process into an interpretable class prediction.\nDuring the training of the entire GdVAE, the prior network learns the class-\nconditional mean \u00b5z(y; \u03b8) = \u00b5z|y and covariance \u03a3z(y; \u03b8) = \u03a3z|y as the parame-\nters of our distribution p\u03b8(z|y) = N (\u00b5z(y; \u03b8), \u03a3z(y; \u03b8)). We assume conditional\nindependence and decompose the likelihood as p\u03b8(z|y) = QM\nj=1 p\u03b8(zj|y). In prac-\ntice, this results in a diagonal covariance matrix \u03a3z|y = diag\n\u0010\n\u03c32\nz1|y, . . . , \u03c32\nzM|y\n\u0011\n.\nWe use this distribution to determine the likelihood values for the GDA classi-\nfier. The class prior p\u03b8(y) can be learned either jointly or separately as the final\ncomponent of the GDA model. Thus, we use the mean values as class prototypes\nand the covariance to measure the distance to these prototypes.",
         "score": 2.063140869140625
       }
-    ]
+    ],
+    "bert_score_precision": 0.847,
+    "bert_score_recall": 0.828,
+    "bert_score_f1": 0.8374
   },
   {
     "group_id": "Team_Neon",
@@ -47,7 +50,10 @@
         "text": "2\nCounterfactual Explanations (CF)\nInstead of directly employing a DNN to define an explainer function x\u03b4 =\nIF (x, \u03b4), we generate CFs in the latent space and visualize the outcome using\nthe decoder IF (x, \u03b4) = g(If(z, \u03b4)). Since the discriminant f(z) = wT z +b of our\nclassifier is linear by construction, we will see that the optimal explainer function\nis also linear If(z, \u03ba) = z + \u03baw, where the latent vector is adjusted in the direc-\ntion of w \u2208RM. Here, \u03ba \u2208R\u2014a tuning knob for data traversal\u2014represents the\nstrength of the manipulation. Our proposed CF methods are shown in 1.) Local counterfactuals: A local explanation should meet both consistency\nand proximity properties. Therefore, the optimal CF z\u03b4 minimizes the distance to\nthe current instance z while ensuring the decision function matches the requested\nvalue \u03b4. This involves solving the following constrained optimization problem\n\\lab el {eq :op\nti\nm} \\coun ter",
         "score": 4.173847675323486
       }
-    ]
+    ],
+    "bert_score_precision": 0.8568,
+    "bert_score_recall": 0.8393,
+    "bert_score_f1": 0.848
   },
   {
     "group_id": "Team_Neon",
@@ -72,7 +78,10 @@
         "text": "for higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-\ntently delivers competitive results to state-of-the-art approaches, particularly\nwhen applied to higher-dimensional images. The class-conditional GdVAE offers\nbetter reconstructions compared to ProtoVAE, the only unconditional model.",
         "score": 0.6014070510864258
       }
-    ]
+    ],
+    "bert_score_precision": 0.8206,
+    "bert_score_recall": 0.8423,
+    "bert_score_f1": 0.8313
   },
   {
     "group_id": "Team_Neon",
@@ -97,7 +106,10 @@
         "text": "GdVAE is shown in through easily comprehensible global explanations and latent space visualization.\nWe achieve this by displaying the decoded prototypes and interpolating between\nthem through our global explainer function (see fier\u2019s prototypes directly uncover biases without the need for quantitative anal-\nysis of counterfactuals on simulated datasets, as shown in prior work (e.g., [43]).",
         "score": 2.5228137969970703
       }
-    ]
+    ],
+    "bert_score_precision": 0.829,
+    "bert_score_recall": 0.8342,
+    "bert_score_f1": 0.8316
   },
   {
     "group_id": "Team_Neon",
@@ -122,7 +134,10 @@
         "text": "\u03b1 and \u03b2 control the balance between M1 and M2, and KL denotes the Kullback-\nLeibler divergence. The derivation of the loss and ELBO can be found in the\nSupplement. Note that during inference, we cannot directly sample from the\nencoder q\u03d5(z|x, y) since the class y is unknown. Instead, we conduct ancestral\nsampling by first sampling from q\u03d5(y|x) and afterwards from q\u03d5(z|x, y) to approx-\nimate q\u03d5(z|x). To ensure coherence between the training and inference processes,\nwe compute the expectations relative to q\u03d5(z|x) and q\u03d5(z, y|x) during training,\nrespectively. This alignment enhances the accuracy of predictions.\nThe Gaussian Discriminant Variational Autoencoder\nMarginalization. The training process is straightforward when labels are ob-\nservable, and we can directly sample from the conditional encoder q\u03d5(z|x, y).\nLikewise, during inference with the model, we require an estimate of z given x\nand y. The challenge here is that y is unknown during inference.",
         "score": 2.125412702560425
       }
-    ]
+    ],
+    "bert_score_precision": 0.8524,
+    "bert_score_recall": 0.8467,
+    "bert_score_f1": 0.8495
   },
   {
     "group_id": "Team_Neon",
@@ -147,7 +162,10 @@
         "text": "L = Lgd + \u03b3Lcon, where \u03b3 controls the impact of the consistency regularizer.\nExperiments\nThe empirical evaluation aims to validate the performance of our model, focusing\non two components: the predictive performance of the GdVAE and the quality of\nthe CFs. We present quantitative results of the predictive performance and CFs in\nSecs. 4.1 and 4.2, along with qualitative results in Sec. 4.3. In the Supplement, we\nconduct a hyperparameter investigation covering all method parameterizations.\nThis includes exploring the model balance between M1 and M2, consistency loss,\nand presenting additional quantitative and qualitative results.\nDatasets and Implementation. We employ four image datasets: MNIST [31],\nCelebA [32], CIFAR-10 [29], and the high-resolution dataset FFHQ [25]. Our neu-\nral networks are intentionally designed to be compact. For CelebA, the encoder\nhas five convolutional layers and one linear layer for \u00b5z(x, y; \u03d5) and \u03a3z(x, y; \u03d5),",
         "score": -1.7150225639343262
       }
-    ]
+    ],
+    "bert_score_precision": 0.8673,
+    "bert_score_recall": 0.8295,
+    "bert_score_f1": 0.848
   },
   {
     "group_id": "Team_Neon",
@@ -172,7 +190,10 @@
         "text": "the baseline. Next, GdVAE\u2019s inference method is evaluated against the leading\nCVAE technique, importance sampling (IS) [45,48,54]. Lastly, ProtoVAE [13] is\nreferenced as a prototype-per-class VAE benchmark.\nResults. The results in Tab. 2 indicate good generalization in classification and\nreconstruction across MNIST and CelebA. The GdVAE\u2019s EM-based inference\nachieves performance close to the optimal baseline with a separate classifier,\nexcept for CIFAR where there is a four-percentage-point gap in accuracy. Com-\nparing our EM and the IS approach suggests that our method is more efficient\nfor higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-",
         "score": 3.320725917816162
       }
-    ]
+    ],
+    "bert_score_precision": 0.9421,
+    "bert_score_recall": 0.8951,
+    "bert_score_f1": 0.918
   },
   {
     "group_id": "Team_Neon",
@@ -197,7 +218,10 @@
         "text": "our classifier. C3LT [26] is trained to generate CFs for our GdVAE model using\na non-linear explainer function instead of our linear one. Finally, EBPE [43] is\nadjusted to train an encoder and decoder based on the GdVAE architecture and\nthe pre-trained classifier. These approaches are compared to our CF methods.\nResults. The results in Tab. 3 reveal performance across diverse datasets in\nbinary classification challenges. Considering that the GdVAE is the sole trans-\nparent model, it is essential to bear in mind that most models operate on the\nGdVAE\u2019s pre-regularized latent space (Consequently, with the exception of EBPE, these methods face a less complex\nA. Haselhoff et al.\na)\nb)\nc)\n\u2605\n\u272a\n\u2605\n\u272a\n\u03f5\n\u03f5\n\u00b5z|s\n\u2726\n\u2022\n\u00b5z|\u00afs\n\u2022\n\u2726\nx\u03b4 = g(\u00afIf(\u00b5z|\u00afs, \u03b4)))\n\u00b5x|\u00afs = g(\u00b5z|\u00afs)\n\u00b5x|s = g(\u00b5z|s)\nvalues for not-smiling (orange, \u2022) and smiling (green, \u2726), where y = \u00afs = not\u2212smiling\nand y = s = smiling. b) Reconstructed random samples for not-smiling (top, orange",
         "score": 3.647174596786499
       }
-    ]
+    ],
+    "bert_score_precision": 0.8993,
+    "bert_score_recall": 0.8401,
+    "bert_score_f1": 0.8687
   },
   {
     "group_id": "Team_Neon",
@@ -222,7 +246,10 @@
         "text": "their classifier for CF generation, resulting in a loss of transparency. In contrast,\nall the other methods described employ complex DNNs for CF generation and\nthe classifier, limiting their transparency. Our approach mirrors these CF gen-\neration processes but stands out with a transparent, linear explainer function\nanalytically linked to our white-box classifier\u2019s decision function.\nSelf-explainable Models (c). The classifier and CF generation of our GdVAE\nare closely tied to the same prototypical space. A line of works that comprises\nthis prototype-based learning can be found in SEM research [2,7,13,17,36,50,51].\nIn [13], a categorization of SEMs was introduced, and our specific focus is on\nmethods prioritizing the transparency property [7, 13, 50]. To maintain inter-\npretability, these SEMs employ similarity scores that measure the likeness be-\ntween features and prototypes within the latent space. Afterwards, these scores",
         "score": -3.0649516582489014
       }
-    ]
+    ],
+    "bert_score_precision": 0.8158,
+    "bert_score_recall": 0.8237,
+    "bert_score_f1": 0.8197
   },
   {
     "group_id": "Team_Neon",
@@ -247,7 +274,10 @@
         "text": "their classifier for CF generation, resulting in a loss of transparency. In contrast,\nall the other methods described employ complex DNNs for CF generation and\nthe classifier, limiting their transparency. Our approach mirrors these CF gen-\neration processes but stands out with a transparent, linear explainer function\nanalytically linked to our white-box classifier\u2019s decision function.\nSelf-explainable Models (c). The classifier and CF generation of our GdVAE\nare closely tied to the same prototypical space. A line of works that comprises\nthis prototype-based learning can be found in SEM research [2,7,13,17,36,50,51].\nIn [13], a categorization of SEMs was introduced, and our specific focus is on\nmethods prioritizing the transparency property [7, 13, 50]. To maintain inter-\npretability, these SEMs employ similarity scores that measure the likeness be-\ntween features and prototypes within the latent space. Afterwards, these scores",
         "score": 2.2406294345855713
       }
-    ]
+    ],
+    "bert_score_precision": 0.8198,
+    "bert_score_recall": 0.8172,
+    "bert_score_f1": 0.8185
   },
   {
     "group_id": "Team_Neon",
@@ -272,7 +302,10 @@
         "text": "stead of \u03a3z =diag\n\u0000\u03c32\nz1, . . . , \u03c32\nzM\n\u0001\nyields equivalent functions and therefore equal\nempirical results for both Riemannian and L2-based CFs. Proofs, assumptions,\nand implications for non-linear methods are provided in the Supplement.\n2.) Global counterfactuals: The second CF approach is to move directly in\nthe direction of the prototype of the opposing class, termed the counterfactual\nprototype. In this scenario, we take a direct path from our current input z to the\nThe Gaussian Discriminant Variational Autoencoder\nCF prototype \u00b5z|k, defining the direction as w = (\u00b5z|k \u2212z), and reuse the local\nexplainer function from Eq. (10).\nThe local approach minimizes input attribute changes (proximity), while\nglobal explanations gradually converge to common CF prototypes to reveal the\noverall model behavior for a category of examples. Both methods maintain the\nconsistency property in the latent space. For realism, we argue that transitioning",
         "score": -3.367121934890747
       }
-    ]
+    ],
+    "bert_score_precision": 0.877,
+    "bert_score_recall": 0.8506,
+    "bert_score_f1": 0.8636
   },
   {
     "group_id": "Team_Neon",
@@ -297,7 +330,10 @@
         "text": "the baseline. Next, GdVAE\u2019s inference method is evaluated against the leading\nCVAE technique, importance sampling (IS) [45,48,54]. Lastly, ProtoVAE [13] is\nreferenced as a prototype-per-class VAE benchmark.\nResults. The results in Tab. 2 indicate good generalization in classification and\nreconstruction across MNIST and CelebA. The GdVAE\u2019s EM-based inference\nachieves performance close to the optimal baseline with a separate classifier,\nexcept for CIFAR where there is a four-percentage-point gap in accuracy. Com-\nparing our EM and the IS approach suggests that our method is more efficient\nfor higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-",
         "score": -2.9991202354431152
       }
-    ]
+    ],
+    "bert_score_precision": 0.856,
+    "bert_score_recall": 0.8539,
+    "bert_score_f1": 0.8549
   },
   {
     "group_id": "Team_Neon",
@@ -322,7 +358,10 @@
         "text": "L = Lgd + \u03b3Lcon, where \u03b3 controls the impact of the consistency regularizer.\nExperiments\nThe empirical evaluation aims to validate the performance of our model, focusing\non two components: the predictive performance of the GdVAE and the quality of\nthe CFs. We present quantitative results of the predictive performance and CFs in\nSecs. 4.1 and 4.2, along with qualitative results in Sec. 4.3. In the Supplement, we\nconduct a hyperparameter investigation covering all method parameterizations.\nThis includes exploring the model balance between M1 and M2, consistency loss,\nand presenting additional quantitative and qualitative results.\nDatasets and Implementation. We employ four image datasets: MNIST [31],\nCelebA [32], CIFAR-10 [29], and the high-resolution dataset FFHQ [25]. Our neu-\nral networks are intentionally designed to be compact. For CelebA, the encoder\nhas five convolutional layers and one linear layer for \u00b5z(x, y; \u03d5) and \u03a3z(x, y; \u03d5),",
         "score": -0.6485235095024109
       }
-    ]
+    ],
+    "bert_score_precision": 0.8154,
+    "bert_score_recall": 0.7865,
+    "bert_score_f1": 0.8007
   },
   {
     "group_id": "Team_Neon",
@@ -347,7 +386,10 @@
         "text": "the baseline. Next, GdVAE\u2019s inference method is evaluated against the leading\nCVAE technique, importance sampling (IS) [45,48,54]. Lastly, ProtoVAE [13] is\nreferenced as a prototype-per-class VAE benchmark.\nResults. The results in Tab. 2 indicate good generalization in classification and\nreconstruction across MNIST and CelebA. The GdVAE\u2019s EM-based inference\nachieves performance close to the optimal baseline with a separate classifier,\nexcept for CIFAR where there is a four-percentage-point gap in accuracy. Com-\nparing our EM and the IS approach suggests that our method is more efficient\nfor higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-",
         "score": 2.6081042289733887
       }
-    ]
+    ],
+    "bert_score_precision": 1.0,
+    "bert_score_recall": 1.0,
+    "bert_score_f1": 1.0
   },
   {
     "group_id": "Team_Neon",
@@ -372,7 +414,10 @@
         "text": "and the classifier itself may not guarantee transparency either.\nSelf-explainable models (SEMs) provide explanations alongside their predic-\ntions without the need for post-hoc training [1,2,6,7,13]. Many SEMs are based\non prototype learning, using these transparent and often visualizable prototypes\nas a bottleneck in a white-box classifier. This white-box classifier (e.g., linear\npredictor) is optimized end-to-end. However, generating CFs for these models is\nonly feasible through post-hoc methods, potentially reducing transparency.\nTo bridge the gap between transparent SEMs and CF methods, we introduce\nGdVAE, a conditional variational autoencoder (CVAE) designed for transpar-\nent classification and CF explanation tasks. Full transparency is achieved with\na generative classifier using class-specific prototypes and a closed-form solution\nfor CFs in the latent space, inspired by Euclidean and Riemannian manifold per-",
         "score": 4.281865119934082
       }
-    ]
+    ],
+    "bert_score_precision": 0.8508,
+    "bert_score_recall": 0.8618,
+    "bert_score_f1": 0.8562
   },
   {
     "group_id": "Team_Neon",
@@ -397,7 +442,10 @@
         "text": "four layers to compute \u00b5z(y; \u03b8) and \u03a3z(y; \u03b8), defining our distribution p\u03b8(z|y).\nAll baseline methods employ identical backbones as the GdVAE, and when fea-\nsible, publicly available code was adjusted to ensure a fair comparison. See the\nSupplement for details on datasets, models, and metrics.\nA. Haselhoff et al.\nbox baseline. Classifier accuracy (ACC) and mean squared error (MSE) of reconstruc-\ntions (scaled by 102) are reported. Mean values and standard deviations are from four\ntraining runs with different seeds. \u2020: incl. ProtoVAE\u2019s augmentation and preprocessing.\nMethod\nMNIST\nCIFAR-",
         "score": -4.786710262298584
       }
-    ]
+    ],
+    "bert_score_precision": 0.8916,
+    "bert_score_recall": 0.967,
+    "bert_score_f1": 0.9278
   },
   {
     "group_id": "Team_Neon",
@@ -422,7 +470,10 @@
         "text": "the baseline. Next, GdVAE\u2019s inference method is evaluated against the leading\nCVAE technique, importance sampling (IS) [45,48,54]. Lastly, ProtoVAE [13] is\nreferenced as a prototype-per-class VAE benchmark.\nResults. The results in Tab. 2 indicate good generalization in classification and\nreconstruction across MNIST and CelebA. The GdVAE\u2019s EM-based inference\nachieves performance close to the optimal baseline with a separate classifier,\nexcept for CIFAR where there is a four-percentage-point gap in accuracy. Com-\nparing our EM and the IS approach suggests that our method is more efficient\nfor higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-",
         "score": -0.11536131799221039
       }
-    ]
+    ],
+    "bert_score_precision": 0.8149,
+    "bert_score_recall": 0.848,
+    "bert_score_f1": 0.8311
   },
   {
     "group_id": "Team_Neon",
@@ -447,7 +498,10 @@
         "text": "The Gaussian Discriminant Variational\nAutoencoder (GdVAE): A Self-Explainable Model\nwith Counterfactual Explanations\nAnselm Haselhoff1,2 , Kevin Trelenberg1,\nFabian K\u00fcppers3 , and Jonas Schneider3",
         "score": 5.225625991821289
       }
-    ]
+    ],
+    "bert_score_precision": 0.8651,
+    "bert_score_recall": 0.8252,
+    "bert_score_f1": 0.8447
   },
   {
     "group_id": "Team_Neon",
@@ -472,7 +526,10 @@
         "text": "GdVAE is shown in through easily comprehensible global explanations and latent space visualization.\nWe achieve this by displaying the decoded prototypes and interpolating between\nthem through our global explainer function (see fier\u2019s prototypes directly uncover biases without the need for quantitative anal-\nysis of counterfactuals on simulated datasets, as shown in prior work (e.g., [43]).",
         "score": 3.924107074737549
       }
-    ]
+    ],
+    "bert_score_precision": 0.905,
+    "bert_score_recall": 0.8743,
+    "bert_score_f1": 0.8894
   },
   {
     "group_id": "Team_Neon",
@@ -497,7 +554,10 @@
         "text": "GdVAE is shown in through easily comprehensible global explanations and latent space visualization.\nWe achieve this by displaying the decoded prototypes and interpolating between\nthem through our global explainer function (see fier\u2019s prototypes directly uncover biases without the need for quantitative anal-\nysis of counterfactuals on simulated datasets, as shown in prior work (e.g., [43]).",
         "score": 2.499389171600342
       }
-    ]
+    ],
+    "bert_score_precision": 0.9559,
+    "bert_score_recall": 0.8513,
+    "bert_score_f1": 0.9006
   },
   {
     "group_id": "Team_Neon",
@@ -522,7 +582,10 @@
         "text": "x\u22c6\nx\u03b4\nAbstract. Visual counterfactual explanation (CF) methods modify im-\nage concepts, e.g., shape, to change a prediction to a predefined outcome\nwhile closely resembling the original query image. Unlike self-explainable\nmodels (SEMs) and heatmap techniques, they grant users the ability to\nexamine hypothetical \"what-if\" scenarios. Previous CF methods either\nentail post-hoc training, limiting the balance between transparency and\nCF quality, or demand optimization during inference. To bridge the gap\nbetween transparent SEMs and CF methods, we introduce the GdVAE,\na self-explainable model based on a conditional variational autoencoder\n(CVAE), featuring a Gaussian discriminant analysis (GDA) classifier and\nintegrated CF explanations. Full transparency is achieved through a gen-\nerative classifier that leverages class-specific prototypes for the down-\nstream task and a closed-form solution for CFs in the latent space. The",
         "score": -1.7863012552261353
       }
-    ]
+    ],
+    "bert_score_precision": 0.9144,
+    "bert_score_recall": 0.9232,
+    "bert_score_f1": 0.9188
   },
   {
     "group_id": "Team_Neon",
@@ -547,7 +610,10 @@
         "text": "p\u03b8(z|y) [27]. The surrogate, also called the recognition model, adapts the latent\ncode distribution based on x. Instead of maximizing the log-likelihood log p\u03b8(x, y)\nof our model, we use the evidence lower bound (ELBO) to define our loss. The\nresulting per sample loss for the GdVAE is Lgd = \u03b1LM1 + \u03b2LM2, with\n\\ loss ^{M1}&\\! =\\! -\\e xpe c t {\\rvzr , \\rvyr \\sim \\ v arp df _\\p\nara\nmA }{\\log \\pdf _ \\param (\\r v xr |\\rvyr ,\\rvzr )} + \\KL {\\var pdf _\\pa ramA (\\rvzr |\\rvxr ,\\rvyr )}{\\pdf _\\param (\\rvzr |\\rvyr )} -\\log \\pdf _\\param (\\rvyr ), \\label {eq:lossgdvae}\\\\ \\loss ^{M2}&\\!=\\!-\\expect {\\rvzr ,\\rvyr \\sim \\varpdf _\\paramA }{\\log \\pdf _\\param (\\rvxr |\\rvyr ,\\rvzr )}+\\KL {\\varpdf _\\paramA (\\rvzr |\\rvxr ,\\rvyr )}{\\pdf (\\rvzr )} -\\expect {\\rvzr \\sim \\varpdf _\\paramA }{\\log \\pdf _\\param (\\rvyr |\\rvzr )}.\\label {eq:lossgdvae2} (8)\n\u03b1 and \u03b2 control the balance between M1 and M2, and KL denotes the Kullback-\nLeibler divergence. The derivation of the loss and ELBO can be found in the",
         "score": -0.464717835187912
       }
-    ]
+    ],
+    "bert_score_precision": 0.8654,
+    "bert_score_recall": 0.8752,
+    "bert_score_f1": 0.8702
   },
   {
     "group_id": "Team_Neon",
@@ -572,6 +638,9 @@
         "text": "2\nCounterfactual Explanations (CF)\nInstead of directly employing a DNN to define an explainer function x\u03b4 =\nIF (x, \u03b4), we generate CFs in the latent space and visualize the outcome using\nthe decoder IF (x, \u03b4) = g(If(z, \u03b4)). Since the discriminant f(z) = wT z +b of our\nclassifier is linear by construction, we will see that the optimal explainer function\nis also linear If(z, \u03ba) = z + \u03baw, where the latent vector is adjusted in the direc-\ntion of w \u2208RM. Here, \u03ba \u2208R\u2014a tuning knob for data traversal\u2014represents the\nstrength of the manipulation. Our proposed CF methods are shown in 1.) Local counterfactuals: A local explanation should meet both consistency\nand proximity properties. Therefore, the optimal CF z\u03b4 minimizes the distance to\nthe current instance z while ensuring the decision function matches the requested\nvalue \u03b4. This involves solving the following constrained optimization problem\n\\lab el {eq :op\nti\nm} \\coun ter",
         "score": 1.3152339458465576
       }
-    ]
+    ],
+    "bert_score_precision": 0.8643,
+    "bert_score_recall": 0.8369,
+    "bert_score_f1": 0.8504
   }
 ]

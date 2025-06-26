@@ -55,7 +55,7 @@ def main():
         print(f"[{idx+1}] Processing: {question}")
 
         try:
-            retrieved_chunks = retriever.query(question, top_k=10)
+            retrieved_chunks = retriever.query(question, top_k=20,rerank_k=4)
             generated_promt = generator.build_prompt(
                 task="qa",
                 question=question,
