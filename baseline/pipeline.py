@@ -1,3 +1,5 @@
+import atexit
+import json
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -11,6 +13,20 @@ def load_txt_file(file_path):
     except Exception as e:
         print(f"Error reading file: {e}")
         return None
+
+# Global log list
+qa_logs = []
+
+def save_logs_on_exit(log_path="rag_log.json"):
+    if qa_logs:
+        try:
+            with open(log_path, 'w', encoding='utf-8') as f:
+                json.dump(qa_logs, f, ensure_ascii=False, indent=2)
+            print(f"\n Logs saved to {log_path}")
+        except Exception as e:
+            print(f"\n Failed to save logs: {e}")
+            
+atexit.register(save_logs_on_exit)
 
 def main():
     print("RAG Pipeline: Text File + Question Answering")
@@ -53,6 +69,13 @@ def main():
                 retrieved_chunks=retrieved_chunks
             )
             print(f"Answer: {answer}\n")
+
+            qa_logs.append({
+                "question": question,
+                "retrieved_chunks": retrieved_chunks,
+                "answer": answer
+            })
+
         except Exception as e:
             print(f"Error: {e}")
 if __name__ == "__main__":
