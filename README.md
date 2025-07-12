@@ -15,7 +15,6 @@ NLProc-Proj-M-SS25/
 │   └── retriever.py              # Retriever class: add_documents(), query(), save(), load()
 ├── evaluation/
 │   └── evaluation.py             # Logging, test runs, grounding checks
-├── pipeline.py 
 ├── test_inputs.json              # Known Q&A pairs for testing
 ├── requirements.txt              # Project dependencies
 └── README.md                     # Project overview and instructions
@@ -28,7 +27,7 @@ NLProc-Proj-M-SS25/
 
 To build a retrieval-augmented NLP system that takes a user query along with a research paper as input and returns precise answers from the paper’s content. This supports quick knowledge extraction and deeper understanding of scholarly texts.
 
-
+![alt text]([https://github.com/akhilcjose/NLProc-Proj-M-SS25/blob/feature/spec_doc/system%20architecture.png])
 
 
 ---
@@ -70,65 +69,41 @@ The `Retriever` class provides a modular interface for building a semantic retri
 
 ---
 
-## 📚 Chunking Strategy
+## 📚 Chunking Strategies
 
-### 1. 🧱 Semantic Section-based Chunking (Used in this project)
+### 1. ✂️ Fixed-size Overlapping Windows (Default)
 
-Splits the document first by semantic section headers (e.g., numbered headings like `4.2 Results`) and then applies recursive character-based splitting to large sections.
+Splits text into word-based chunks with overlapping words between them.
 
-- ✅ Preserves document structure and section semantics  
-- ✅ Reduces the risk of breaking meaningful content mid-way  
-- ❌ Requires documents with clear section headers for best results
-
----
-
-### 2. ✂️ Recursive Character-based Chunking (Fallback)
-
-Uses LangChain's `RecursiveCharacterTextSplitter` to break down text based on character limits and common separators (`\n\n`, `\n`, `.`, etc.).
-
-- ✅ Ensures manageable chunk sizes for embedding models  
-- ✅ Works well even without clear section headers  
-- ❌ Can break logical units of meaning if not tuned carefully
+- ✅ Simple, good for short texts  
+- ❌ Can break sentences and lose semantic meaning
 
 ---
 
-## 🔍 Retrieval Pipeline
+### 2. 🧱 Sentence-based Chunking
 
-### Overview
+Splits the document by sentences and groups a fixed number of them per chunk.
 
-This pipeline retrieves the most relevant document chunks in response to a user query using a hybrid of dense retrieval and re-ranking.
-
----
-
-### 1. 🧠 Dense Vector Retrieval (FAISS + SentenceTransformer)
-
-Generates embeddings for document chunks using a SentenceTransformer model (`paraphrase-MiniLM-L6-v2` by default), and indexes them using FAISS for efficient similarity search.
-
-- ✅ Fast and scalable retrieval  
-- ✅ Works well for semantically similar content  
-- ❌ Might return loosely related chunks without re-ranking
+- ✅ Maintains grammatical meaning  
+- ❌ Uneven lengths, may exceed token limits
 
 ---
 
-### 2. 🎯 Cross-Encoder Re-Ranking (Optional)
+### 3. 📏 Paragraph-based Chunking
 
-The top-k retrieved chunks are re-scored using a more accurate cross-encoder model (`cross-encoder/ms-marco-MiniLM-L-6-v2`), which jointly encodes the query and document chunk.
+Divides the document by paragraphs (`\n\n` as delimiter).
 
-- ✅ Improves relevance of final results  
-- ✅ Learns fine-grained matching  
-- ❌ Slower than dense retrieval (only used on top results)
+- ✅ Keeps logical structure intact  
+- ❌ Paragraphs can be too long or too short
 
 ---
 
-### 3. 🔄 Retrieval Workflow
+### 4. 🔢 Token-based Chunking (Advanced)
 
-1. Input query is encoded into a dense vector  
-2. FAISS searches top `k` similar chunks  
-3. Top chunks are re-ranked by the cross-encoder  
-4. Final top `rerank_k` chunks are returned
+Uses a tokenizer (e.g., from HuggingFace) to split text into chunks based on token limits.
 
-
-
+- ✅ Optimized for LLM input sizes  
+- ❌ Requires external tokenizer and handling edge cases
 
 
 ---
@@ -149,14 +124,13 @@ The top-k retrieved chunks are re-scored using a more accurate cross-encoder mod
 [Top-k Similar Chunks]
 ```
 
-![alt text](https://github.com/akhilcjose/NLProc-Proj-M-SS25/blob/feature/spec_doc/system%20architecture.png)
 ---
 
 
 
 # 2. **Generator** – `generator.py`
 
-The `generator.py` module is responsible for generating textual responses based questions. It uses a pre-trained transformer model (google/flan-t5-large) from the Hugging Face Transformers library.
+The `generator.py` module is responsible for generating textual responses based on tasks like Question Answering (QA), Summarization, Multiple-Choice Question (MCQ) answering, and Text Classification. It uses a pre-trained transformer model (default: `google/flan-t5-base`) from the Hugging Face Transformers library.
 
 ## 🧠 How It Works
 
@@ -165,6 +139,14 @@ The `generator.py` module is responsible for generating textual responses based 
 - **Prompt Builder**: Constructs task-specific prompts using the context (retrieved document chunks, question, etc.)
 - **Answer Generator**: Uses beam search to generate a concise response.
 
+## 🔧 Tasks Supported
+
+| Task            | Input Parameters                               | Output                  |
+|-----------------|------------------------------------------------|--------------------------|
+| QA              | `question`, `retrieved_chunks`                | One-sentence answer     |
+| Summarization   | `retrieved_chunks`                            | One-sentence summary    |
+| MCQ             | `question`, `retrieved_chunks`, `options`     | One letter + option     |
+| Classification  | `text_to_classify`, `retrieved_chunks`        | "Offensive" or "Non-Offensive" |
 
 ---
 
@@ -174,6 +156,14 @@ The `generator.py` module is responsible for generating textual responses based 
     - Requires context and question.
     - Ensures the model only answers if the context contains the answer.
 
+- **Summarization:**
+    - Summarizes content into one sentence without using external knowledge.
+
+- **MCQ:**
+    - Generates the best answer from given options using only the context.
+
+- **Classification:**
+    - Classifies a text based on the definitions of "Offensive" and "Non-Offensive" given in the context.
 
 
 ---
@@ -183,6 +173,18 @@ The `generator.py` module is responsible for generating textual responses based 
 
 Loads `test_inputs.json` and prints question, retrieved context, generated answer, and metadata.
 
+---
+
+## 🧪 Sample Data – `test_inputs.json`
+
+```json
+{
+  "question": "What is natural language processing?",
+  "retrieved_chunks": ["NLP is a subfield of AI ..."],
+  "generated_answer": "Natural language processing ...",
+  "group_id": "Team_Neon"
+}
+```
 
 ---
 # 4. **Requirements** – `requirements.txt`
@@ -193,33 +195,22 @@ This repository contains the dependencies needed for a Natural Language Processi
 
 ## 📚 Included Libraries
 
+### 1. **faiss-cpu**
+- A library for efficient similarity search and clustering of dense vectors.
+- Used for fast retrieval of document chunks using approximate nearest neighbor search.
 
+### 2. **sentence-transformers**
+- Framework for generating sentence and text embeddings using pretrained models like BERT, RoBERTa, etc.
+- Essential for encoding documents and queries into vectors for semantic search.
 
-## 📦 Dependencies
+### 3. **numpy**
+- Fundamental package for numerical computation.
+- Used for handling embeddings and matrix operations required by FAISS.
 
-This project relies on a set of powerful libraries for document processing, semantic retrieval, and web deployment.
+### 4. **PyPDF2**
+- Pure Python library to read and extract text from PDF files.
+- Useful for loading real documents in `.pdf` format for processing.
 
-### 🔍 NLP & Embedding
-- `sentence-transformers` – For dense vector embedding of text chunks  
-- `faiss-cpu` – Fast approximate nearest neighbor search  
-- `transformers` – For cross-encoder re-ranking  
-- `langchain`, `langchain-core`, `langchain-text-splitters` – For chunking and document pipeline management  
-
-### 📄 Document Parsing
-- `pymupdf`, `pypdf2`, `pypdfium2` – PDF parsing  
-- `python-docx`, `python-pptx`, `openpyxl`, `xlsxwriter` – DOCX, PPTX, and Excel parsing  
-- `beautifulsoup4`, `lxml` – HTML/XML parsing  
-
-### 📚 Semantic Chunking
-- `semchunk` – For section-aware document chunking  
-- `spacy`, `spacy-layout` – For layout-based sentence segmentation  
-
-### ⚙️ Utilities & Backend
-- `fastapi`, `uvicorn` – Web API interface  
-- `gradio` – Interactive UI (optional)  
-- `pandas`, `numpy`, `scikit-learn`, `scipy` – Data handling and evaluation  
-- `joblib`, `multiprocess`, `mpire` – Parallel processing  
-- `python-dotenv`, `pydantic` – Config and environment management  
 
 
 ---
