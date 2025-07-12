@@ -1,0 +1,21 @@
+[
+  {
+    "question": "what is your name?",
+    "retrieved_chunks": [
+      {
+        "text": "1.",
+        "score": -6.207080364227295
+      },
+      {
+        "text": "1.",
+        "score": -6.207080364227295
+      },
+      {
+        "text": "1.",
+        "score": -6.207080364227295
+      }
+    ],
+    "answer": "I dont know.",
+    "generated_prompt": "Answering the question using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\n1.\n1.\n1.\n\nQuestion: what is your name?\nAnswer:"
+  }
+]
