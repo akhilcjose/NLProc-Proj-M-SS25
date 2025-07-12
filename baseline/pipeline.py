@@ -63,6 +63,11 @@ def main():
             break
         try:
             retrieved_chunks = retriever.query(question, top_k=3)
+            generated_promt = generator.build_prompt(
+                task="qa",
+                question=question,
+                retrieved_chunks=retrieved_chunks
+            )
             answer = generator.generate_answer(
                 task="qa",
                 question=question,
@@ -73,7 +78,8 @@ def main():
             qa_logs.append({
                 "question": question,
                 "retrieved_chunks": retrieved_chunks,
-                "answer": answer
+                "answer": answer,
+                "generated_prompt": generated_promt
             })
 
         except Exception as e:

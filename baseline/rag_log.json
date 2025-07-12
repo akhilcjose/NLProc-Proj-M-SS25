@@ -1,74 +1,21 @@
 [
   {
-    "question": "What is the primary goal of the GdVAE model?",
+    "question": "what is your name?",
     "retrieved_chunks": [
       {
-        "text": "for higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-\ntently delivers competitive results to state-of-the-art approaches, particularly\nwhen applied to higher-dimensional images. The class-conditional GdVAE offers\nbetter reconstructions compared to ProtoVAE, the only unconditional model.",
-        "score": 2.6142544746398926
+        "text": "1.",
+        "score": -6.207080364227295
       },
       {
-        "text": "the baseline. Next, GdVAE’s inference method is evaluated against the leading\nCVAE technique, importance sampling (IS) [45,48,54]. Lastly, ProtoVAE [13] is\nreferenced as a prototype-per-class VAE benchmark.\nResults. The results in Tab. 2 indicate good generalization in classification and\nreconstruction across MNIST and CelebA. The GdVAE’s EM-based inference\nachieves performance close to the optimal baseline with a separate classifier,\nexcept for CIFAR where there is a four-percentage-point gap in accuracy. Com-\nparing our EM and the IS approach suggests that our method is more efficient\nfor higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-",
-        "score": 1.081382155418396
+        "text": "1.",
+        "score": -6.207080364227295
       },
       {
-        "text": "our classifier. C3LT [26] is trained to generate CFs for our GdVAE model using\na non-linear explainer function instead of our linear one. Finally, EBPE [43] is\nadjusted to train an encoder and decoder based on the GdVAE architecture and\nthe pre-trained classifier. These approaches are compared to our CF methods.\nResults. The results in Tab. 3 reveal performance across diverse datasets in\nbinary classification challenges. Considering that the GdVAE is the sole trans-\nparent model, it is essential to bear in mind that most models operate on the\nGdVAE’s pre-regularized latent space (Consequently, with the exception of EBPE, these methods face a less complex\nA. Haselhoff et al.\na)\nb)\nc)\n★\n✪\n★\n✪\nϵ\nϵ\nµz|s\n✦\n•\nµz|¯s\n•\n✦\nxδ = g(¯If(µz|¯s, δ)))\nµx|¯s = g(µz|¯s)\nµx|s = g(µz|s)\nvalues for not-smiling (orange, •) and smiling (green, ✦), where y = ¯s = not−smiling\nand y = s = smiling. b) Reconstructed random samples for not-smiling (top, orange",
-        "score": -0.418918639421463
+        "text": "1.",
+        "score": -6.207080364227295
       }
     ],
-    "answer": "Reconstruction of higher-dimensional images"
-  },
-  {
-    "question": "How does GdVAE generate counterfactual explanations?",
-    "retrieved_chunks": [
-      {
-        "text": "GdVAE is shown in through easily comprehensible global explanations and latent space visualization.\nWe achieve this by displaying the decoded prototypes and interpolating between\nthem through our global explainer function (see fier’s prototypes directly uncover biases without the need for quantitative anal-\nysis of counterfactuals on simulated datasets, as shown in prior work (e.g., [43]).",
-        "score": 6.4667534828186035
-      },
-      {
-        "text": "The Gaussian Discriminant Variational\nAutoencoder (GdVAE): A Self-Explainable Model\nwith Counterfactual Explanations\nAnselm Haselhoff1,2 , Kevin Trelenberg1,\nFabian Küppers3 , and Jonas Schneider3",
-        "score": 5.426678657531738
-      },
-      {
-        "text": "types for the downstream task. With the known linear structure, we can provide\nan analytical solution to generate counterfactual images. Our extensive exper-\niments substantiate our method’s ability to yield results that are on par with\nstate-of-the-art approaches in terms of consistency, proximity, and realism while\nmaintaining transparency. Furthermore, we illustrate how prototypes offer in-\nsight into decision logic and aid in identifying classifier bias. We see our method\nas a significant step toward the integration of self-explainable models and coun-\nterfactual explanation techniques. In contrast to previous work that requires\npost-hoc analysis for generating counterfactuals, our transparent model con-\nstrains the shared latent space to support consistency, proximity, and realism.\nFinally, resembling C3LT, our approach scales and seamlessly integrates with\nlarger network architectures, as demonstrated on the FFHQ dataset.\nAcknowledgments",
-        "score": 1.5582928657531738
-      }
-    ],
-    "answer": "By displaying the decoded prototypes and interpolating between them through our global explainer function"
-  },
-  {
-    "question": "What are the four key properties the GdVAE seeks to achieve in counterfactual explanations?",
-    "retrieved_chunks": [
-      {
-        "text": "GdVAE is shown in through easily comprehensible global explanations and latent space visualization.\nWe achieve this by displaying the decoded prototypes and interpolating between\nthem through our global explainer function (see fier’s prototypes directly uncover biases without the need for quantitative anal-\nysis of counterfactuals on simulated datasets, as shown in prior work (e.g., [43]).",
-        "score": 3.2484848499298096
-      },
-      {
-        "text": "The Gaussian Discriminant Variational\nAutoencoder (GdVAE): A Self-Explainable Model\nwith Counterfactual Explanations\nAnselm Haselhoff1,2 , Kevin Trelenberg1,\nFabian Küppers3 , and Jonas Schneider3",
-        "score": 2.661892890930176
-      },
-      {
-        "text": "types for the downstream task. With the known linear structure, we can provide\nan analytical solution to generate counterfactual images. Our extensive exper-\niments substantiate our method’s ability to yield results that are on par with\nstate-of-the-art approaches in terms of consistency, proximity, and realism while\nmaintaining transparency. Furthermore, we illustrate how prototypes offer in-\nsight into decision logic and aid in identifying classifier bias. We see our method\nas a significant step toward the integration of self-explainable models and coun-\nterfactual explanation techniques. In contrast to previous work that requires\npost-hoc analysis for generating counterfactuals, our transparent model con-\nstrains the shared latent space to support consistency, proximity, and realism.\nFinally, resembling C3LT, our approach scales and seamlessly integrates with\nlarger network architectures, as demonstrated on the FFHQ dataset.\nAcknowledgments",
-        "score": -3.1245851516723633
-      }
-    ],
-    "answer": "consistency, proximity, and realism"
-  },
-  {
-    "question": "What makes GdVAE a self-explainable model?",
-    "retrieved_chunks": [
-      {
-        "text": "GdVAE is shown in through easily comprehensible global explanations and latent space visualization.\nWe achieve this by displaying the decoded prototypes and interpolating between\nthem through our global explainer function (see fier’s prototypes directly uncover biases without the need for quantitative anal-\nysis of counterfactuals on simulated datasets, as shown in prior work (e.g., [43]).",
-        "score": 2.5228137969970703
-      },
-      {
-        "text": "for higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-\ntently delivers competitive results to state-of-the-art approaches, particularly\nwhen applied to higher-dimensional images. The class-conditional GdVAE offers\nbetter reconstructions compared to ProtoVAE, the only unconditional model.",
-        "score": 2.5042123794555664
-      },
-      {
-        "text": "our classifier. C3LT [26] is trained to generate CFs for our GdVAE model using\na non-linear explainer function instead of our linear one. Finally, EBPE [43] is\nadjusted to train an encoder and decoder based on the GdVAE architecture and\nthe pre-trained classifier. These approaches are compared to our CF methods.\nResults. The results in Tab. 3 reveal performance across diverse datasets in\nbinary classification challenges. Considering that the GdVAE is the sole trans-\nparent model, it is essential to bear in mind that most models operate on the\nGdVAE’s pre-regularized latent space (Consequently, with the exception of EBPE, these methods face a less complex\nA. Haselhoff et al.\na)\nb)\nc)\n★\n✪\n★\n✪\nϵ\nϵ\nµz|s\n✦\n•\nµz|¯s\n•\n✦\nxδ = g(¯If(µz|¯s, δ)))\nµx|¯s = g(µz|¯s)\nµx|s = g(µz|s)\nvalues for not-smiling (orange, •) and smiling (green, ✦), where y = ¯s = not−smiling\nand y = s = smiling. b) Reconstructed random samples for not-smiling (top, orange",
-        "score": 1.6157021522521973
-      }
-    ],
-    "answer": "easily comprehensible global explanations and latent space visualization"
+    "answer": "I dont know.",
+    "generated_prompt": "Answering the question using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\n1.\n1.\n1.\n\nQuestion: what is your name?\nAnswer:"
   }
 ]
