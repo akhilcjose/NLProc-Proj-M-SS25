@@ -1,7 +1,7 @@
 
 # NLProc-Proj-M-SS25 – Team Neon
 
-This project is designed to assist users in querying academic research papers and retrieving relevant, context-specific answers. The system focuses on understanding the user's query and extracting accurate information directly from the content of the given paper, enabling more efficient and insightful academic research.
+This project is designed to assist users in querying academic research papers and retrieving relevant, context-specific answers. The system focuses on understanding the user's query and extracting accurate information directly from the content of the given paper, enabling more efficient and insightful academic research.It uses techniques like semantic search and language generation to understand your question and find the best answer from the paper.
 
 ---
 
@@ -171,7 +171,7 @@ The `generator.py` module is responsible for generating textual responses based 
 
 # 3. **Evaluator** – `evaluation.py`
 
-Loads `test_inputs.json` and prints question, retrieved context, generated answer, and metadata.
+Loads `test_inputs.json` runs through the system, then prints the question,retrieved content and the generated answer.
 
 ---
 
@@ -179,9 +179,11 @@ Loads `test_inputs.json` and prints question, retrieved context, generated answe
 
 ```json
 {
-  "question": "What is natural language processing?",
-  "retrieved_chunks": ["NLP is a subfield of AI ..."],
-  "generated_answer": "Natural language processing ...",
+  "question": "What is the main goal of retrieval-augmented generation in NLP?",
+  "retrieved_chunks": [
+    "Retrieval-Augmented Generation (RAG) combines information retrieval with text generation. Its main goal is to improve the quality and accuracy of generated answers by grounding them in external documents, rather than relying solely on the language model’s internal knowledge."
+  ],
+  "generated_answer": "To improve answer quality by grounding responses in external documents.",
   "group_id": "Team_Neon"
 }
 ```
@@ -211,13 +213,15 @@ This repository contains the dependencies needed for a Natural Language Processi
 - Pure Python library to read and extract text from PDF files.
 - Useful for loading real documents in `.pdf` format for processing.
 
+### 5. **Transformers**
+- Language models for generation like BERT.
 
 
 ---
 
 ## 👥 Team Neon
 
-Created as part of the SS25 NLP project module.
+Created as part of the SS25 NLP project module.We aim to make academic research easier and faster using natural Language procesing.
 
 ---
 
