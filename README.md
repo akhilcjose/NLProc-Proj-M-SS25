@@ -178,14 +178,34 @@ Loads `test_inputs.json` runs through the system, then prints the question,retri
 ## 🧪 Sample Data – `test_inputs.json`
 
 ```json
-{
-  "question": "What is the main goal of retrieval-augmented generation in NLP?",
-  "retrieved_chunks": [
-    "Retrieval-Augmented Generation (RAG) combines information retrieval with text generation. Its main goal is to improve the quality and accuracy of generated answers by grounding them in external documents, rather than relying solely on the language model’s internal knowledge."
-  ],
-  "generated_answer": "To improve answer quality by grounding responses in external documents.",
-  "group_id": "Team_Neon"
-}
+  {
+    "group_id": "Team_Neon",
+    "question": "What is the primary goal of the GdVAE model?",
+    "expected_answer": "The GdVAE model aims to unify self-explainable models and counterfactual explanations by using a conditional variational autoencoder with a Gaussian discriminant analysis classifier.",
+    "generated_answer": "transform the features z from the recognition network and marginalization process into an interpretable class prediction",
+    "generated_promt": "Answering the question using only the provided context.\nIf the answer is not in the context, respond with 'I don't know.'\nContext:\n1\nEvaluation of Predictive Performance\nMethodology. For a trustworthy SEM, performance should align with the clos-\nest black-box model [13]. Thus, the goal of this evaluation is not to outperform\nstate-of-the-art results on specific datasets but to offer a relative comparison for\nthe GdVAE architecture and various training methods. In all approaches, both\nthe classifier and autoencoder are jointly trained, sharing the same backbone.\nBaselines. First, optimal performance for the selected architecture is established\nusing a black-box model, comprising a jointly trained CVAE and classifier as\nthe baseline. Next, GdVAE\u2019s inference method is evaluated against the leading\nCVAE technique, importance sampling (IS) [45,48,54]. Lastly, ProtoVAE [13] is\nreferenced as a prototype-per-class VAE benchmark.\nResults. The results in Tab. 2 indicate good generalization in classification and\nreconstruction across MNIST and CelebA. The GdVAE\u2019s EM-based inference\nfor higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-\ntently delivers competitive results to state-of-the-art approaches, particularly\nwhen applied to higher-dimensional images. The class-conditional GdVAE offers\nbetter reconstructions compared to ProtoVAE, the only unconditional model.\nGdVAE is shown in through easily comprehensible global explanations and latent space visualization.\nWe achieve this by displaying the decoded prototypes and interpolating between\nthem through our global explainer function (see fier\u2019s prototypes directly uncover biases without the need for quantitative anal-\nysis of counterfactuals on simulated datasets, as shown in prior work (e.g., [43]).\ncriminant analysis model (GDA) [18] and does not have any additional parame-\nters. Its purpose is to transform the features z from the recognition network and\nmarginalization process into an interpretable class prediction.\nDuring the training of the entire GdVAE, the prior network learns the class-\nconditional mean \u00b5z(y; \u03b8) = \u00b5z|y and covariance \u03a3z(y; \u03b8) = \u03a3z|y as the parame-\nters of our distribution p\u03b8(z|y) = N (\u00b5z(y; \u03b8), \u03a3z(y; \u03b8)). We assume conditional\nindependence and decompose the likelihood as p\u03b8(z|y) = QM\nj=1 p\u03b8(zj|y). In prac-\ntice, this results in a diagonal covariance matrix \u03a3z|y = diag\n\u0010\n\u03c32\nz1|y, . . . , \u03c32\nzM|y\n\u0011\n.\nWe use this distribution to determine the likelihood values for the GDA classi-\nfier. The class prior p\u03b8(y) can be learned either jointly or separately as the final\ncomponent of the GDA model. Thus, we use the mean values as class prototypes\nand the covariance to measure the distance to these prototypes.\n\nQuestion: What is the primary goal of the GdVAE model?\nAnswer:",
+    "retrieved_chunks": [
+      {
+        "text": "1\nEvaluation of Predictive Performance\nMethodology. For a trustworthy SEM, performance should align with the clos-\nest black-box model [13]. Thus, the goal of this evaluation is not to outperform\nstate-of-the-art results on specific datasets but to offer a relative comparison for\nthe GdVAE architecture and various training methods. In all approaches, both\nthe classifier and autoencoder are jointly trained, sharing the same backbone.\nBaselines. First, optimal performance for the selected architecture is established\nusing a black-box model, comprising a jointly trained CVAE and classifier as\nthe baseline. Next, GdVAE\u2019s inference method is evaluated against the leading\nCVAE technique, importance sampling (IS) [45,48,54]. Lastly, ProtoVAE [13] is\nreferenced as a prototype-per-class VAE benchmark.\nResults. The results in Tab. 2 indicate good generalization in classification and\nreconstruction across MNIST and CelebA. The GdVAE\u2019s EM-based inference",
+        "score": 4.303585052490234
+      },
+      {
+        "text": "for higher-dimensional images, benefiting from sampling in the lower-dimensional\nlatent instead of image space. With data augmentation and normalization from\nProtoVAE, GdVAE achieves comparable results to ProtoVAE.\nTakeaway: The inference procedure of our SEM closely matches the perfor-\nmance of a discriminative black-box model. Furthermore, our method consis-\ntently delivers competitive results to state-of-the-art approaches, particularly\nwhen applied to higher-dimensional images. The class-conditional GdVAE offers\nbetter reconstructions compared to ProtoVAE, the only unconditional model.",
+        "score": 2.6142544746398926
+      },
+      {
+        "text": "GdVAE is shown in through easily comprehensible global explanations and latent space visualization.\nWe achieve this by displaying the decoded prototypes and interpolating between\nthem through our global explainer function (see fier\u2019s prototypes directly uncover biases without the need for quantitative anal-\nysis of counterfactuals on simulated datasets, as shown in prior work (e.g., [43]).",
+        "score": 2.271634578704834
+      },
+      {
+        "text": "criminant analysis model (GDA) [18] and does not have any additional parame-\nters. Its purpose is to transform the features z from the recognition network and\nmarginalization process into an interpretable class prediction.\nDuring the training of the entire GdVAE, the prior network learns the class-\nconditional mean \u00b5z(y; \u03b8) = \u00b5z|y and covariance \u03a3z(y; \u03b8) = \u03a3z|y as the parame-\nters of our distribution p\u03b8(z|y) = N (\u00b5z(y; \u03b8), \u03a3z(y; \u03b8)). We assume conditional\nindependence and decompose the likelihood as p\u03b8(z|y) = QM\nj=1 p\u03b8(zj|y). In prac-\ntice, this results in a diagonal covariance matrix \u03a3z|y = diag\n\u0010\n\u03c32\nz1|y, . . . , \u03c32\nzM|y\n\u0011\n.\nWe use this distribution to determine the likelihood values for the GDA classi-\nfier. The class prior p\u03b8(y) can be learned either jointly or separately as the final\ncomponent of the GDA model. Thus, we use the mean values as class prototypes\nand the covariance to measure the distance to these prototypes.",
+        "score": 2.063140869140625
+      }
+    ],
+    "bert_score_precision": 0.847,
+    "bert_score_recall": 0.828,
+    "bert_score_f1": 0.8374
+  }
 ```
 
 ---
