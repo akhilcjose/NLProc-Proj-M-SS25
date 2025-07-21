@@ -171,11 +171,11 @@ The `generator.py` module is responsible for generating textual responses based 
 
 # 3. **Evaluator** – `evaluation.py`
 
-Loads `test_inputs.json` runs through the system, then prints the question,retrieved content and the generated answer.
+Loads `test_inputs01.json` runs through the system, then prints the question,retrieved content and the generated answer.
 
 ---
 
-## 🧪 Sample Data – `test_inputs.json`
+## 🧪 Sample Log file – `log_with_bertscore.json`
 
 ```json
   {
