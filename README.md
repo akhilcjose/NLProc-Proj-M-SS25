@@ -32,6 +32,12 @@ To build a retrieval-augmented NLP system that takes a user query along with a r
 
 ---
 
+## Steps to run from Baseline folder
+
+1.  to run the evaluation file : python evaluation.py
+2.  to see the outpu file: test_inputs01.json
+
+
 ## 🚀 Features
 
 - Post natural language queries.
@@ -68,6 +74,10 @@ The `Retriever` class provides a modular interface for building a semantic retri
 - **load** - Placeholder method intended for implementing future model and index loading capabilities.
 
 ---
+
+## Document Loading
+
+1. **.pdf :** page by page extraction via PyMupdf
 
 ## 📚 Chunking Strategies
 
@@ -107,6 +117,11 @@ Uses a tokenizer (e.g., from HuggingFace) to split text into chunks based on tok
 
 
 ---
+
+## Embeddings:
+
+1. **Batch Encoding: ** Use Sentence transformer to convert chunks into vector embeddings
+
 
 ## 🖼️ Architecture Diagram
 
@@ -250,6 +265,10 @@ Created as part of the SS25 NLP project module.We aim to make academic research 
 - The system is modular and task-specific.
 - Easy to extend with new models or embedding techniques.
 - Can be integrated into larger QA or chatbot systems.
+
+## Team Members: 
+
+
 
 
 ---
