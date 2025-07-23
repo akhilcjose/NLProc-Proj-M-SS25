@@ -27,7 +27,7 @@ NLProc-Proj-M-SS25/
 
 To build a retrieval-augmented NLP system that takes a user query along with a research paper as input and returns precise answers from the paper’s content. This supports quick knowledge extraction and deeper understanding of scholarly texts.
 
-![alt text]([https://github.com/akhilcjose/NLProc-Proj-M-SS25/blob/feature/spec_doc/system%20architecture.png])
+![alt text](https://github.com/akhilcjose/NLProc-Proj-M-SS25/blob/feature/spec_doc/system%20architecture.png)
 
 
 ---
