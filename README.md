@@ -38,8 +38,12 @@ To build a retrieval-augmented NLP system that takes a user query along with a r
 
 ## Steps to run from Baseline folder
 
-1.  to run the evaluation file : python evaluation.py
-2.  to see the outpu file: test_inputs01.json
+1. Install Dependencies:
+            pip install -r requirements.txt
+2. Run Retriever:
+           
+
+     
 
 
 ## 🚀 Features
