@@ -11,15 +11,16 @@ This project is designed to assist users in querying academic research papers an
 NLProc-Proj-M-SS25/
 ├── baseline/
 ├── generator/
-│   └── generator.py              # Generator class: build_prompt(), generate_answer()
+│   └── generator.py               # Generator class: build_prompt(), generate_answer()
 ├── retriever/
-│   └── retriever.py              # Retriever class: add_documents(), query(), save(), load()
-├── evaluation/
-│   └── evaluation.py             # Logging, test runs, grounding checks
-├── test_inputs01.json            # Known Q&A pairs for testing
-├── requirements.txt              # Project dependencies
-├── beryScoreAnalysis.ipynb       # bert score script
-└── README.md                     # Project overview and instructions
+    └── evaluation.py              # Logging, test runs, grounding checks
+    └── test_inputs01.json         # Known Q&A pairs for testing 
+└── _pycache_
+│   └── retriever_module.py        # Retriever class: add_documents(), query(), save(), load()
+├── utils           
+  └── requirements.txt             # Project dependencies
+  └── beryScoreAnalysis.ipynb      # bert score script
+  └── README.md                    # Project overview and instructions
 
 ```
 
