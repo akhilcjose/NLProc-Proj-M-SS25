@@ -293,6 +293,8 @@ Created as part of the SS25 NLP project module.We aim to make academic research 
 
 **Team Members:**
 
+<img width="245" height="100" alt="image" src="https://github.com/user-attachments/assets/ad3d867b-c9eb-4e1c-94b9-4ca020138bbd" />
+
 ---
 
 ## 📌 Notes
