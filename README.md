@@ -198,7 +198,6 @@ The `generator.py` module is responsible for generating textual responses based 
 | QA              | `question`, `retrieved_chunks`                | One-sentence answer     |
 | Summarization   | `retrieved_chunks`                            | One-sentence summary    |
 | MCQ             | `question`, `retrieved_chunks`, `options`     | One letter + option     |
-| Classification  | `text_to_classify`, `retrieved_chunks`        | "Offensive" or "Non-Offensive" |
 
 ---
 
@@ -213,9 +212,6 @@ The `generator.py` module is responsible for generating textual responses based 
 
 - **MCQ:**
     - Generates the best answer from given options using only the context.
-
-- **Classification:**
-    - Classifies a text based on the definitions of "Offensive" and "Non-Offensive" given in the context.
 
 
 ---
@@ -295,6 +291,8 @@ This repository contains the dependencies needed for a Natural Language Processi
 
 Created as part of the SS25 NLP project module.We aim to make academic research easier and faster using natural Language procesing.
 
+**Team Members:**
+
 ---
 
 ## 📌 Notes
@@ -303,9 +301,6 @@ Created as part of the SS25 NLP project module.We aim to make academic research 
 - Easy to extend with new models or embedding techniques.
 - Can be integrated into larger QA or chatbot systems.
 
-## Team Members: 
-
-<img width="242" height="95" alt="image" src="https://github.com/user-attachments/assets/3b625ad7-7d9d-451c-8589-5e350c4f78e4" />
 
 
 
