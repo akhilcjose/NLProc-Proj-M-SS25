@@ -9,18 +9,18 @@ This project is designed to assist users in querying academic research papers an
 
 ```
 NLProc-Proj-M-SS25/
+├── Images/
 ├── baseline/
-├── generator/
-│   └── generator.py               # Generator class: build_prompt(), generate_answer()
-├── retriever/
-    └── evaluation.py              # Logging, test runs, grounding checks
-    └── test_inputs01.json         # Known Q&A pairs for testing 
-└── _pycache_
-│   └── retriever_module.py        # Retriever class: add_documents(), query(), save(), load()
-├── utils           
-  └── requirements.txt             # Project dependencies
-  └── beryScoreAnalysis.ipynb      # bert score script
-  └── README.md                    # Project overview and instructions
+    ├── generator/
+        └── generator.py               # Generator class: build_prompt(), generate_answer()
+    ├── retriever/
+        └── retriever_module.py        # Retriever class: add_documents(), query(), save(), load().
+    └── test_inputs01.json             # Known Q&A pairs for testing 
+    └── beryScoreAnalysis.ipynb        # bert score script
+    └── evaluation.py                  # script to evaluate test QA set against the RAG system
+    └── pipeline.py                    # pipeline function the combine retriever and generator class as single system. Allows querying and logging.           
+└── requirements.txt             # Project dependencies
+└── README.md                    # Project overview and instructions
 
 ```
 
@@ -30,7 +30,7 @@ NLProc-Proj-M-SS25/
 
 To build a retrieval-augmented NLP system that takes a user query along with a research paper as input and returns precise answers from the paper’s content. This supports quick knowledge extraction and deeper understanding of scholarly texts.
 
-<img width="1026" height="532" alt="image" src="https://github.com/user-attachments/assets/27535f21-0ee3-42d4-9a7e-48c92e3b3306" />
+![Alt text](Images/Pipeline%20Overview-2.png)
 
 
 
@@ -39,38 +39,14 @@ To build a retrieval-augmented NLP system that takes a user query along with a r
 ## Steps to run from Baseline folder
 
 **1. **Install Dependencies:****
+
             pip install -r requirements.txt
-**2. **Run Retriever:****
+
+**2. **Run pipeline,py for continous querying with logging feature****
+
+        python pipeline.py
            
-           class Retriever:
-    def __init__(self, model_name='paraphrase-MiniLM-L6-v2', reranker_model='cross-encoder/ms-marco-MiniLM-L-6-v2'):
-        # Initialize the SentenceTransformer model for generating embeddings
-        self.model = SentenceTransformer(model_name)
-        self.reranker = CrossEncoder(reranker_model)  # Load the model here
-        self.documents = []  # Store the document chunks
-        self.embeddings = []  # Store the embeddings for those chunks
-        self.index = None  # FAISS index will be built when documents are added
-
-    def chunk_document(self, document, chunk_size=1000, overlap=400):
-        """
-        Chunk the document into smaller pieces.
-        """
-        splitter = RecursiveCharacterTextSplitter(
-        chunk_size=chunk_size,
-        chunk_overlap=overlap,
-        separators=["\n\n", "\n", ".", " ", ""]
-        )
-
-** 3. **Run Generator:****
-
-        class Generator:
-    def __init__(self, model_name='google/flan-t5-base', max_length=512):
-        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
-        self.max_length = max_length
-        self.URL = "http://localhost:8080/v1/chat/completions"
-
-  **4. Evaluate Using Test File:**
+**3. **To evaluate the test set and create a log file run evaluation.py****
 
          python evaluation.py
 
