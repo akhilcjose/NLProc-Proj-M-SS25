@@ -9,18 +9,18 @@ This project is designed to assist users in querying academic research papers an
 
 ```
 NLProc-Proj-M-SS25/
+├── Images/
 ├── baseline/
-├── generator/
-│   └── generator.py               # Generator class: build_prompt(), generate_answer()
-├── retriever/
-    └── evaluation.py              # Logging, test runs, grounding checks
-    └── test_inputs01.json         # Known Q&A pairs for testing 
-└── _pycache_
-│   └── retriever_module.py        # Retriever class: add_documents(), query(), save(), load()
-├── utils           
-  └── requirements.txt             # Project dependencies
-  └── beryScoreAnalysis.ipynb      # bert score script
-  └── README.md                    # Project overview and instructions
+    ├── generator/
+        └── generator.py               # Generator class: build_prompt(), generate_answer()
+    ├── retriever/
+        └── retriever_module.py        # Retriever class: add_documents(), query(), save(), load().
+    └── test_inputs01.json             # Known Q&A pairs for testing 
+    └── beryScoreAnalysis.ipynb        # bert score script
+    └── evaluation.py                  # script to evaluate test QA set against the RAG system
+    └── pipeline.py                    # pipeline function the combine retriever and generator class as single system. Allows querying and logging.           
+└── requirements.txt             # Project dependencies
+└── README.md                    # Project overview and instructions
 
 ```
 
@@ -30,7 +30,7 @@ NLProc-Proj-M-SS25/
 
 To build a retrieval-augmented NLP system that takes a user query along with a research paper as input and returns precise answers from the paper’s content. This supports quick knowledge extraction and deeper understanding of scholarly texts.
 
-<img width="1026" height="532" alt="image" src="https://github.com/user-attachments/assets/27535f21-0ee3-42d4-9a7e-48c92e3b3306" />
+![Alt text](Images/Pipeline%20Overview-2.png)
 
 
 
